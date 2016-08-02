@@ -16,7 +16,7 @@ export default class HomeView extends Component {
         <h4>Welcome!</h4>
         <img
           alt='This is a duck, because Redux!'
-          className={classes.duck}
+          class={classes.duck}
           src={DuckImage} />
         <input id="time" />
         <h1>123</h1>
