@@ -3,3 +3,8 @@
   width: 120px;
   margin: 1.5rem auto;
 }
+:global {
+  .slider-decorator-0, .slider-decorator-1 {
+    display: none;
+  }
+}
