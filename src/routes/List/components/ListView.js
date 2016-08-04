@@ -2,21 +2,20 @@ import React, {Component} from 'react'
 import classes from './ListView.scss'
 import TopTab from 'components/TopTab'
 
-import { Table, Icon } from 'antd'
+import { Table, Icon, DatePicker } from 'antd'
+const RangePicker = DatePicker.RangePicker
 
 const columns = [{
   title: '申请日期',
-  dataIndex: 'date',
-  width: 150
+  dataIndex: 'date'
 }, {
   title: '申请金额',
-  dataIndex: 'amount',
-  width: 150
+  dataIndex: 'amount'
 }, {
   title: '支付宝交易号',
   dataIndex: 'orderNo'
 }, {
-  title: '支付宝账号',
+  title: '支付账号',
   dataIndex: 'orderName'
 }, {
   title: '状态',
@@ -43,6 +42,12 @@ for (let i = 0; i < 100; i++) {
 export default class ListView extends Component {
 
   render () {
+
+    const onChange= (value, dateString) => {
+      console.log(value)
+      console.log(dateString)
+    }
+
     return (
       <div>
         <TopTab></TopTab>
@@ -76,12 +81,7 @@ export default class ListView extends Component {
               <div className={classes.typeitem}>已完成</div>
             </div>
             <div className={classes.date}>
-              <input className={classes.dateinput} placeholder="开始日期" />
-              <span className={classes.spa}></span>
-              <input className={classes.dateinput} placeholder="结束日期" />
-              <div className={classes.calendar}>
-                <Icon type="calendar" />
-              </div>
+              <RangePicker style={{ width: 246 }} onChange={onChange} />
             </div>
             <div className={classes.btn}>
               <button type="button" className="button mr12">申请提现</button>

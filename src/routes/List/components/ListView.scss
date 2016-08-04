@@ -52,39 +52,10 @@
 }
 
 .date {
-  border: 1px solid #dbdbdb;
   width: 246px;
-  height: 32px;
   position: absolute;
   left: 50%;
   margin-left: -123px;
-
-  & .anticon-calendar {
-    font-size: 16px;
-  }
-}
-
-.dateinput {
-  border:none;
-  float: left;
-  width: 94px;
-  height: 30px;
-  padding: 0;
-  padding-left: 17px;
-  outline: none;
-}
-
-.spa {
-  background: url("../assets/spa.png") no-repeat;
-  width: 12px;
-  height: 5px;
-  float: left;
-  margin-top: 13px;
-}
-
-.calendar {
-  font-size: 16px;
-  margin-top: 3px;
 }
 
 .btn {
@@ -142,6 +113,12 @@
       position: absolute;
       right: 0;
       top: 30px;
+    }
+
+    &:last-child {
+      &:after {
+        border-right: none;
+      }
     }
   }
 }
