@@ -5,6 +5,8 @@ import '../../styles/core.scss'
 import { Menu, Breadcrumb, Icon } from 'antd'
 import 'antd/dist/antd.css'
 
+import { Link } from 'react-router'
+
 class CoreLayout extends Component {
   constructor(props) {
     super(props)
@@ -15,23 +17,26 @@ class CoreLayout extends Component {
 
   onCollapseChange() {
     this.setState({
-      collapse: !this.state.collapse,
+      collapse: !this.state.collapse
     })
   }
 
   render() {
     const collapse = this.state.collapse
-    const { children } = this.props
     return (
       <div className={collapse ? "ant-layout-aside ant-layout-aside-collapse" : "ant-layout-aside"}>
         <aside className="ant-layout-sider">
           <div className="ant-layout-logo"></div>
           <Menu mode="inline" theme="dark" defaultSelectedKeys={['user']}>
             <Menu.Item key="user">
-              <Icon type="user" /><span className="nav-text">导航一</span>
+              <Link to='/'>
+                <Icon type="user" /><span className="nav-text">导航一</span>
+              </Link>
             </Menu.Item>
             <Menu.Item key="setting">
-              <Icon type="setting" /><span className="nav-text">导航二</span>
+              <Link to='/list'>
+                <Icon type="setting" /><span className="nav-text">导航二</span>
+              </Link>
             </Menu.Item>
             <Menu.Item key="laptop">
               <Icon type="laptop" /><span className="nav-text">导航三</span>
@@ -59,7 +64,7 @@ class CoreLayout extends Component {
           <div className="ant-layout-container">
             <div className="ant-layout-content">
               <div style={{ height: 220 }}>
-                {children}
+                {this.props.children}
               </div>
             </div>
           </div>
