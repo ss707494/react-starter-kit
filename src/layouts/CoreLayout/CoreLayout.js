@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../../styles/core.scss'
 import classes from './CoreLayout.scss'
 import logoImg from './logo.png'
+import headImg from './head.png'
 
 import { Menu, Breadcrumb, Icon } from 'antd'
 import 'antd/dist/antd.css'
@@ -81,9 +82,21 @@ class CoreLayout extends Component {
                 <i className="iconfont icon-qr"/>
               </div>
             </div>
-            <div class={classes.header_right}>
-              <div class={classes.header_icon}>
-
+            <div className={classes.header_right}>
+              <div className={classes.header_icon}>
+                <i className="iconfont icon-notifications"/>
+                <span>2</span>
+              </div>
+              <div className={classes.header_icon}>
+                <i className="iconfont icon-visibility"/>
+              </div>
+              <div className={classes.header_icon}>
+                <i className="iconfont icon-reply"/>
+              </div>
+              <div className={classes.user_con}>
+                <div className={classes.header_name}>Hi,  Alice</div>
+                <img className={classes.header_img} src={headImg}/>
+                <Icon type="down" className={classes.header_down} />
               </div>
             </div>
           </div>
