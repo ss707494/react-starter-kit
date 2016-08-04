@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import '../../styles/core.scss'
 import classes from './CoreLayout.scss'
+
 import logoImg from './logo.png'
 import headImg from './head.png'
 
 import { Menu, Breadcrumb, Icon } from 'antd'
-import 'antd/dist/antd.css'
-//import '../../styles/antd.css'
+import '../../styles/antd.scss'
+
 
 import { IndexLink, Link } from 'react-router'
 

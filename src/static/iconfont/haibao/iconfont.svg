@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg">
 <metadata>
-Created by FontForge 20120731 at Thu Aug  4 13:10:09 2016
+Created by FontForge 20120731 at Thu Aug  4 23:26:50 2016
  By admin
 </metadata>
 <defs>
@@ -19,7 +19,7 @@ Created by FontForge 20120731 at Thu Aug  4 13:10:09 2016
     bbox="0 -64 1025 960"
     underline-thickness="50"
     underline-position="-100"
-    unicode-range="U+0078-E606"
+    unicode-range="U+0078-E608"
   />
 <missing-glyph horiz-adv-x="374" 
 d="M34 0v682h272v-682h-272zM68 34h204v614h-204v-614z" />
@@ -56,5 +56,9 @@ t-80 33h-210z" />
 d="M64 437h395v395h-395v-395zM143 753h237v-237h-237v237zM143 753zM222 674h79v-79h-79v79zM222 674zM565 832v-53v-26v-79h79v79h158v79h-237zM565 832zM565 516h79v-79h-79v79zM565 516zM802 595h-158v-79h79v-79h158v79h-79v79zM802 595zM802 753v-158h79v-79h79v158
 h-79v79h-79zM802 753zM881 832h79v-79h-79v79zM881 832zM64 331h79v-158h-79v158zM64 331zM64 94h79v-158h-79v158zM64 94zM143 173h79v-79h-79v79zM143 173zM222 252h79v-79h79v79h79v79h-237v-79zM222 252zM301 94v-79h-79v-79h158v79h79v158h-79v-79h-79zM301 94zM565 15
 h79v-79h-79v79zM565 15zM881 15h-79v-79h158v79v79h-79v-79zM881 15zM881 331h79v-79h-79v79zM881 331zM802 94v237h-79h-79v-79h-79v-158h79v79h79v-79h79zM802 94z" />
+    <glyph glyph-name="uniE608" unicode="&#xe608;" 
+d="M844 443q-19 5 -32 -11q-6 -8 -6 -22v-379q0 -35 -34 -35h-581q-34 0 -34 35v707q0 34 34 34h432h8q11 1 19 9q13 14 6 32t-29 18q-209 1 -439 0h-12q-35 -5 -56 -30.5t-21 -61.5v-355v-355q0 -12 2 -21q6 -31 31 -51.5t58 -19.5h583q11 0 16 1q34 5 55 30t21 60v382v6
+q-2 21 -21 27zM924 742q0 12 -8 20q-9 10 -21.5 10t-23.5 -11q-63 -64 -378 -383l-5 -5q-10 -13 -4.5 -28.5t21.5 -19.5q16 -3 30 11q65 65 378 382q3 4 4 5q1 3 8 18q0 1 -1 1zM482 504q13 0 21 8.5t8 21t-8 21t-20 8.5h-179q-13 0 -22 -11q-11 -15 -3.5 -31.5t26.5 -16.5
+q12 -1 88 -1q83 1 89 1zM305 384q-13 0 -21.5 -9t-8 -21.5t9 -21t20.5 -8.5h88q12 0 20 8q14 13 8 31q-6 20 -26 21h-46h-44z" />
   </font>
 </defs></svg>
