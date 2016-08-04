@@ -1,0 +1,18 @@
+.con {
+  border-bottom: 1px solid #dbdbdb;
+  margin-bottom: 24px;
+}
+.tab {
+  color: #333333;
+  font-size: 14px;
+  float: left;
+  padding: 20px 0 19px 0;
+  margin-right: 23px;
+  position: relative;
+  top: 1px;
+  z-index: 1;
+
+  &.active {
+    border-bottom: 2px solid #00b9fb;
+  }
+}

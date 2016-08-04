@@ -7,7 +7,7 @@ import ElapseRoute from './Elapse'
 import RouteRoute from './Route'
 import PageNotFound from './PageNotFound'
 import Redirect from './PageNotFound/redirect'
-import List from './List'
+import ListRoute from './List'
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -21,7 +21,7 @@ export const createRoutes = (store) => ({
     ZenRoute(store),
     ElapseRoute(store),
     RouteRoute(store),
-    List(store),
+    ListRoute(store),
     PageNotFound(),
     Redirect
   ]

@@ -53,23 +53,19 @@ class CoreLayout extends Component {
           </div>
         </aside>
         <div className="ant-layout-main">
-          <div className="ant-layout-header"></div>
-          <div className="ant-layout-breadcrumb">
-            <Breadcrumb>
-              <Breadcrumb.Item>首页</Breadcrumb.Item>
-              <Breadcrumb.Item>应用列表</Breadcrumb.Item>
-              <Breadcrumb.Item>某应用</Breadcrumb.Item>
-            </Breadcrumb>
+          <div className="ant-layout-header">
+            <div className="ant-title">童书馆管理中心</div>
           </div>
           <div className="ant-layout-container">
             <div className="ant-layout-content">
-              <div style={{ height: 220 }}>
+              <div>
                 {this.props.children}
               </div>
             </div>
           </div>
           <div className="ant-layout-footer">
-            Ant Design 版权所有 © 2015 由蚂蚁金服体验技术部支持
+            Shenzhen Caldecott Cultural Communications Co.,Ltd.<br />
+            © 2009-2016 深圳市凯迪克文化传播有限公司旗下 孩宝小镇 版权所有 <a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备12087424号-2</a>
           </div>
         </div>
       </div>
