@@ -6,7 +6,7 @@ import logoImg from './logo.png'
 import { Menu, Breadcrumb, Icon } from 'antd'
 import 'antd/dist/antd.css'
 
-import { Link } from 'react-router'
+import { IndexLink, Link } from 'react-router'
 
 class CoreLayout extends Component {
   constructor(props) {
@@ -35,50 +35,57 @@ class CoreLayout extends Component {
               <span className="logo-user">Alice...</span>童书馆
             </span>
           </div>
-          <Menu mode="inline" theme="dark" defaultSelectedKeys={['user']}>
-            <Menu.Item key="home">
-              <Link to='/'>
-                <Icon type="home" /><span className="nav-text">首页</span>
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="tag">
-              <Link to='/list' activeClassName='ant-menu-item-selected'>
-                <Icon type="tag" /><span className="nav-text">团购</span>
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="book">
-              <i className="iconfont icon-book"></i><span className="nav-text">自定义书单</span>
-            </Menu.Item>
-            <Menu.Item key="notification">
-              <Icon type="notification" /><span className="nav-text">童书</span>
-            </Menu.Item>
-            <Menu.Item key="text">
-              <Icon type="file-text" /><span className="nav-text">订单</span>
-            </Menu.Item>
-            <Menu.Item key="reward">
-              <Icon type="pay-circle" /><span className="nav-text">奖励</span>
-            </Menu.Item>
-            <Menu.Item key="team">
-              <Icon type="team" /><span className="nav-text">推广伙伴</span>
-            </Menu.Item>
-            <Menu.Item key="family">
-              <Icon type="file-text" /><span className="nav-text">阅读家庭</span>
-            </Menu.Item>
-            <Menu.Item key="chart">
-              <Icon type="file-text" /><span className="nav-text">统计</span>
-            </Menu.Item>
-            <Menu.Item key="setting">
-              <Icon type="setting" /><span className="nav-text">设置</span>
-            </Menu.Item>
-          </Menu>
+          <div className="ant-menu ant-menu-inline ant-menu-dark ant-menu-root">
+            <IndexLink to='/' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+              <i className="anticon anticon-home"/><span class="nav-text">首页</span>
+            </IndexLink>
+            <Link to='/list' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+              <i className="anticon anticon-tag"/><span class="nav-text">团购</span>
+            </Link>
+            <Link to='/a' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+              <i className="iconfont icon-logo"/><span class="nav-text">自定义书单</span>
+            </Link>
+            <Link to='/a' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+              <i className="iconfont icon-book"/><span class="nav-text">童书</span>
+            </Link>
+            <Link to='/a' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+              <i className="anticon anticon-file-text"/><span class="nav-text">订单</span>
+            </Link>
+            <Link to='/a' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+              <i className="anticon anticon-pay-circle"/><span class="nav-text">奖励</span>
+            </Link>
+            <Link to='/a' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+              <i className="anticon anticon-team"/><span class="nav-text">推广伙伴</span>
+            </Link>
+            <Link to='/a' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+              <i className="iconfont icon-family"/><span class="nav-text">阅读家庭</span>
+            </Link>
+            <Link to='/a' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+              <i className="anticon anticon-line-chart"/><span class="nav-text">统计</span>
+            </Link>
+            <Link to='/a' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+              <i className="anticon anticon-setting"/><span class="nav-text">设置</span>
+            </Link>
+          </div>
           <div className={classes.service}>在线客服</div>
           <div className="ant-aside-action" onClick={this.onCollapseChange.bind(this)}>
             {collapse ? <Icon type="right" /> : <Icon type="left" />}
           </div>
         </aside>
         <div className="ant-layout-main">
-          <div className="ant-layout-header">
-            <div className="ant-title">童书馆管理中心</div>
+          <div className="ant-layout-header clearfix">
+            <div class={classes.header_left}>
+              <div className="ant-title">童书馆管理中心</div>
+              <div className={classes.spa}></div>
+              <div className={classes.header_qr}>
+                <i className="iconfont icon-qr"/>
+              </div>
+            </div>
+            <div class={classes.header_right}>
+              <div class={classes.header_icon}>
+
+              </div>
+            </div>
           </div>
           <div className="ant-layout-container">
             <div className="ant-layout-content">
