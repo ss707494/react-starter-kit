@@ -1,3 +1,13 @@
+.service {
+  color: #9f9f9f;
+  font-size: 12px;
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
 :global {
   .ant-layout-aside {
     position: relative;
@@ -5,24 +15,54 @@
   }
 
   .ant-layout-aside .ant-layout-logo {
-    width: 150px;
-    height: 32px;
-    background: #333;
+    width: 48px;
+    height: 48px;
     border-radius: 6px;
-    margin: 16px 24px 16px 28px;
+    margin: 16px 14px 16px 28px;
     transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .ant-layout-aside.ant-layout-aside-collapse .logo-name {
+    position: absolute;
+    left: 61px;
+    width: 100px;
+    display: none;
+  }
+  /*
+
+  .ant-layout-aside .logo-name {
+    transition: 1s .2s;
+  }*/
+
+  .logo-name {
+    display: inline-block;
+    color: #fff;
+    position: absolute;
+    top: 31px;
+    font-size: 14px;
+    opacity: 1;
+  }
+
+  .logo-user {
+    display: inline-block;
+    max-width: 68px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: bottom;
   }
 
   .ant-layout-aside-collapse .ant-layout-logo {
-    width: 32px;
-    margin: 16px;
+    width: 48px;
+    margin: 16px 16px 0 8px;
     transition: all 0.3s ease;
+    overflow: hidden;
   }
 
   .ant-layout-aside .ant-layout-sider {
     width: 224px;
     background: #404040;
-    position: absolute;
+    position: fixed;
     overflow: visible;
     padding-bottom: 24px;
     height: 100%;
@@ -144,4 +184,5 @@
     padding-left: 40px;
     padding-top: 20px;
   }
+
 }

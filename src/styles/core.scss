@@ -59,4 +59,24 @@
   .clearfix:after {
     clear: both;
   }
+
+  .button {
+    font-size: 14px;
+    line-height: 1;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 9px 24px;
+    background: #fabe1d;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .blue {
+    background: #00b9fb !important;
+  }
+
+  .mr12 {
+    margin-right: 12px;
+  }
 }

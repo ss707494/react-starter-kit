@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import './CoreLayout.scss'
 import '../../styles/core.scss'
+import classes from './CoreLayout.scss'
+import logoImg from './logo.png'
 
 import { Menu, Breadcrumb, Icon } from 'antd'
+//import '../../styles/antd.css'
 import 'antd/dist/antd.css'
 
 import { Link } from 'react-router'
@@ -26,28 +28,49 @@ class CoreLayout extends Component {
     return (
       <div className={collapse ? "ant-layout-aside ant-layout-aside-collapse" : "ant-layout-aside"}>
         <aside className="ant-layout-sider">
-          <div className="ant-layout-logo"></div>
+          <div className="ant-layout-logo">
+            <img src={logoImg} />
+          </div>
+          <span class="logo-name">
+              <span className="logo-user">Alice...</span>童书馆
+            </span>
           <Menu mode="inline" theme="dark" defaultSelectedKeys={['user']}>
-            <Menu.Item key="user">
+            <Menu.Item key="home">
               <Link to='/'>
-                <Icon type="user" /><span className="nav-text">导航一</span>
+                <Icon type="home" /><span className="nav-text">首页</span>
               </Link>
+            </Menu.Item>
+            <Menu.Item key="tag">
+              <Link to='/list'>
+                <Icon type="tag" /><span className="nav-text">团购</span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="test1">
+              <i className="iconfont icon-book"></i><span className="nav-text">自定义书单</span>
+            </Menu.Item>
+            <Menu.Item key="test2">
+              <Icon type="notification" /><span className="nav-text">童书</span>
+            </Menu.Item>
+            <Menu.Item key="test3">
+              <Icon type="file-text" /><span className="nav-text">订单</span>
+            </Menu.Item>
+            <Menu.Item key="reward">
+              <Icon type="pay-circle" /><span className="nav-text">奖励</span>
+            </Menu.Item>
+            <Menu.Item key="team">
+              <Icon type="team" /><span className="nav-text">推广伙伴</span>
+            </Menu.Item>
+            <Menu.Item key="family">
+              <Icon type="file-text" /><span className="nav-text">阅读家庭</span>
+            </Menu.Item>
+            <Menu.Item key="chart">
+              <Icon type="file-text" /><span className="nav-text">统计</span>
             </Menu.Item>
             <Menu.Item key="setting">
-              <Link to='/list'>
-                <Icon type="setting" /><span className="nav-text">导航二</span>
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="laptop">
-              <Icon type="laptop" /><span className="nav-text">导航三</span>
-            </Menu.Item>
-            <Menu.Item key="notification">
-              <Icon type="notification" /><span className="nav-text">导航四</span>
-            </Menu.Item>
-            <Menu.Item key="folder">
-              <Icon type="folder" /><span className="nav-text">导航五</span>
+              <Icon type="setting" /><span className="nav-text">设置</span>
             </Menu.Item>
           </Menu>
+          <div className={classes.service}>在线客服</div>
           <div className="ant-aside-action" onClick={this.onCollapseChange.bind(this)}>
             {collapse ? <Icon type="right" /> : <Icon type="left" />}
           </div>
