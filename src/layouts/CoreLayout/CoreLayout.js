@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import Header from '../../components/Header'
-import classes from './CoreLayout.scss'
+import './CoreLayout.scss'
 import '../../styles/core.scss'
 
 import { Menu, Breadcrumb, Icon } from 'antd'
@@ -22,6 +21,7 @@ class CoreLayout extends Component {
 
   render() {
     const collapse = this.state.collapse
+    const { children } = this.props
     return (
       <div className={collapse ? "ant-layout-aside ant-layout-aside-collapse" : "ant-layout-aside"}>
         <aside className="ant-layout-sider">
@@ -59,7 +59,7 @@ class CoreLayout extends Component {
           <div className="ant-layout-container">
             <div className="ant-layout-content">
               <div style={{ height: 220 }}>
-                内容区域
+                {children}
               </div>
             </div>
           </div>
@@ -71,13 +71,6 @@ class CoreLayout extends Component {
     );
   }
 }
-
-/*export const CoreLayout = ({ children }) => (
-  <div>
-    <Layout/>
-    {children}
-  </div>
-)*/
 
 CoreLayout.propTypes = {
   children: React.PropTypes.element.isRequired
