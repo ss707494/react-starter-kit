@@ -16,7 +16,7 @@
   }
 
   body{
-    font-family: "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Hiragino Kaku Gothic Pro", Meiryo, "Malgun Gothic", sans-serif;
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
     color: #333;
     font-size: 14px;
   }
@@ -70,10 +70,18 @@
     border: none;
     outline: none;
     cursor: pointer;
+
+    &:hover {
+      background: #FAD95B;
+    }
   }
 
   .blue {
     background: #00b9fb !important;
+
+    &:hover {
+      background: #31D3FB !important;
+    }
   }
 
   .mr12 {

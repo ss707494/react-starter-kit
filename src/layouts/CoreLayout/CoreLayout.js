@@ -27,12 +27,14 @@ class CoreLayout extends Component {
     return (
       <div className={collapse ? "ant-layout-aside ant-layout-aside-collapse" : "ant-layout-aside"}>
         <aside className="ant-layout-sider">
-          <div className="ant-layout-logo">
-            <img src={logoImg} />
-          </div>
-          <span class="logo-name">
+          <div className="ant-name-con">
+            <div className="ant-layout-logo">
+              <img src={logoImg} />
+            </div>
+            <span class="logo-name">
               <span className="logo-user">Alice...</span>童书馆
             </span>
+          </div>
           <Menu mode="inline" theme="dark" defaultSelectedKeys={['user']}>
             <Menu.Item key="home">
               <Link to='/'>
@@ -40,17 +42,17 @@ class CoreLayout extends Component {
               </Link>
             </Menu.Item>
             <Menu.Item key="tag">
-              <Link to='/list'>
+              <Link to='/list' activeClassName='ant-menu-item-selected'>
                 <Icon type="tag" /><span className="nav-text">团购</span>
               </Link>
             </Menu.Item>
-            <Menu.Item key="test1">
+            <Menu.Item key="book">
               <i className="iconfont icon-book"></i><span className="nav-text">自定义书单</span>
             </Menu.Item>
-            <Menu.Item key="test2">
+            <Menu.Item key="notification">
               <Icon type="notification" /><span className="nav-text">童书</span>
             </Menu.Item>
-            <Menu.Item key="test3">
+            <Menu.Item key="text">
               <Icon type="file-text" /><span className="nav-text">订单</span>
             </Menu.Item>
             <Menu.Item key="reward">

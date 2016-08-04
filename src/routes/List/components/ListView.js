@@ -48,6 +48,18 @@ export default class ListView extends Component {
       console.log(dateString)
     }
 
+    const pagination = {
+      total: data.length,
+      showSizeChanger: true,
+      showQuickJumper: true,
+      onShowSizeChange(current, pageSize) {
+        console.log('Current: ', current, '; PageSize: ', pageSize);
+      },
+      onChange(current) {
+        console.log('Current: ', current);
+      }
+    }
+
     return (
       <div>
         <TopTab></TopTab>
@@ -88,7 +100,7 @@ export default class ListView extends Component {
               <button type="button" className="button blue">消费记录</button>
             </div>
           </div>
-          <Table columns={columns} dataSource={data} pagination={{ pageSize: 10 }} />
+          <Table columns={columns} dataSource={data} pagination={pagination}/>
         </div>
       </div>
     )
