@@ -22,15 +22,6 @@
     box-sizing: inherit;
   }
 
-  a{
-    color:#07c;
-    text-decoration: none;
-    &:hover{
-      color:#3af;
-      text-decoration: underline;
-    }
-  }
-
   ul, li {
     list-style: none;
     padding: 0;
@@ -43,16 +34,6 @@
   }
   .text-center{
     text-align: center;
-  }
-
-  .clearfix:before,
-  .clearfix:after {
-    content: " ";
-    display: table;
-  }
-
-  .clearfix:after {
-    clear: both;
   }
 
   .button {
