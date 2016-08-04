@@ -4,7 +4,11 @@ import Part from './Part'
 
 export default (store) => ({
   path: 'group',
-  indexRoute: Withdraw(store),
+  indexRoute: {
+    onEnter (nextState, replace) {
+      replace('/group/withdraw')
+    }
+  },
   childRoutes: [
     Part(store),
     Withdraw(store),
