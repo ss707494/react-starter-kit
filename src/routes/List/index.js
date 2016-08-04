@@ -1,7 +1,8 @@
 import { injectReducer } from '../../store/reducers'
+import ZenRoute from '../Zen'
 
 export default (store) => ({
-  path: 'list',
+  path: 'list/withdraw',
   getComponent (nextState, cb) {
     require.ensure([], (require) => {
       const List = require('./containers/ListViewContainer').default
@@ -9,5 +10,8 @@ export default (store) => ({
       injectReducer(store, { key: 'list', reducer })
       cb(null, List)
     })
-  }
+  },
+  childRoutes: [
+    ZenRoute(store)
+  ]
 })

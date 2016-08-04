@@ -6,6 +6,7 @@ import headImg from './head.png'
 
 import { Menu, Breadcrumb, Icon } from 'antd'
 import 'antd/dist/antd.css'
+//import '../../styles/antd.css'
 
 import { IndexLink, Link } from 'react-router'
 
@@ -40,31 +41,31 @@ class CoreLayout extends Component {
             <IndexLink to='/' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
               <i className="anticon anticon-home"/><span class="nav-text">首页</span>
             </IndexLink>
-            <Link to='/list' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+            <Link to='/group' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
               <i className="anticon anticon-tag"/><span class="nav-text">团购</span>
             </Link>
-            <Link to='/a' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+            <Link to='/define' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
               <i className="iconfont icon-logo"/><span class="nav-text">自定义书单</span>
             </Link>
-            <Link to='/a' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+            <Link to='/books' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
               <i className="iconfont icon-book"/><span class="nav-text">童书</span>
             </Link>
-            <Link to='/a' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+            <Link to='/order' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
               <i className="anticon anticon-file-text"/><span class="nav-text">订单</span>
             </Link>
-            <Link to='/a' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+            <Link to='/reward' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
               <i className="anticon anticon-pay-circle"/><span class="nav-text">奖励</span>
             </Link>
-            <Link to='/a' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+            <Link to='/team' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
               <i className="anticon anticon-team"/><span class="nav-text">推广伙伴</span>
             </Link>
-            <Link to='/a' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+            <Link to='/family' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
               <i className="iconfont icon-family"/><span class="nav-text">阅读家庭</span>
             </Link>
-            <Link to='/a' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+            <Link to='/statistic' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
               <i className="anticon anticon-line-chart"/><span class="nav-text">统计</span>
             </Link>
-            <Link to='/a' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
+            <Link to='/setting' className="ant-menu-item" activeClassName='ant-menu-item-selected'>
               <i className="anticon anticon-setting"/><span class="nav-text">设置</span>
             </Link>
           </div>
@@ -109,7 +110,7 @@ class CoreLayout extends Component {
           </div>
           <div className="ant-layout-footer">
             Shenzhen Caldecott Cultural Communications Co.,Ltd.<br />
-            © 2009-2016 深圳市凯迪克文化传播有限公司旗下 孩宝小镇 版权所有 <a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备12087424号-2</a>
+            © 2009-2016 深圳市凯迪克文化传播有限公司旗下 孩宝小镇 版权所有 <a className={classes.gov} href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备12087424号-2</a>
           </div>
         </div>
       </div>

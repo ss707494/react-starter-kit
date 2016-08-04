@@ -12,14 +12,14 @@ export default class TopTab extends Component {
 
     return (
       <div className={conClass}>
-        <Link to='/' >
+        <Link to='/group/reward' activeClassName={classes.active}>
           <div className={classes.tab}>我的奖励</div>
         </Link>
-        <Link to='/' >
+        <Link to='/group/part' activeClassName={classes.active}>
           <div className={classes.tab}>我的分成</div>
         </Link>
-        <Link to='/' >
-          <div className={[classes.tab, classes.active].join(' ')}>我要提现</div>
+        <Link to='/group/withdraw' activeClassName={classes.active}>
+          <div className={classes.tab}>我要提现</div>
         </Link>
       </div>
     )

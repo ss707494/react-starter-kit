@@ -18,7 +18,7 @@
     width: 48px;
     height: 48px;
     border-radius: 6px;
-    margin: 16px 14px 16px 28px;
+    margin: 16px 14px 16px 24px;
     transition: all 0.3s ease;
     display: inline-block;
   }
@@ -282,4 +282,8 @@
 .user_con {
   float: left;
   cursor: pointer;
+}
+
+.gov {
+  color: #a0a0a0;
 }

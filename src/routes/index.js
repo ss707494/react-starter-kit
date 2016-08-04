@@ -7,7 +7,7 @@ import ElapseRoute from './Elapse'
 import RouteRoute from './Route'
 import PageNotFound from './PageNotFound'
 import Redirect from './PageNotFound/redirect'
-import ListRoute from './List'
+import Group from './Group'
 
 export const createRoutes = (store) => ({
   path: '/',
@@ -18,7 +18,7 @@ export const createRoutes = (store) => ({
     ZenRoute(store),
     ElapseRoute(store),
     RouteRoute(store),
-    ListRoute(store),
+    Group(store),
     PageNotFound(),
     Redirect
   ]
