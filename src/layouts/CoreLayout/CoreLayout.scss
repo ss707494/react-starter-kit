@@ -185,4 +185,14 @@
     padding-top: 20px;
   }
 
+  .ant-table-body {
+    border: 1px solid #ececef;
+    border-bottom: none;
+    border-radius: 3px;
+  }
+
+  .ant-table th {
+    border-bottom: 1px solid #e7e7eb;
+  }
+
 }

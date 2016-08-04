@@ -4,7 +4,6 @@ import classes from './CoreLayout.scss'
 import logoImg from './logo.png'
 
 import { Menu, Breadcrumb, Icon } from 'antd'
-//import '../../styles/antd.css'
 import 'antd/dist/antd.css'
 
 import { Link } from 'react-router'

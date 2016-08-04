@@ -69,7 +69,7 @@ export default class ListView extends Component {
         </div>
 
         <div className={classes.con}>
-          <div className="clearfix">
+          <div className={[classes.table_top, 'clearfix'].join(' ')}>
             <div className={classes.type}>
               <div className={classes.typeitem}>全部</div>
               <div className={[classes.typeitem, classes.typeactive].join(' ')}>申请中</div>
