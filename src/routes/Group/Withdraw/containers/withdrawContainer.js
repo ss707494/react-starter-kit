@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
-import { fetchZen, clearZen } from '../modules/withdraw'
+import { changeType, fetchData } from '../modules/withdraw'
 
 import WithdrawView from '../components/Withdraw'
 
 const mapActionCreators = {
-  fetchZen,
-  clearZen
+  changeType,
+  fetchData
 }
 
 const mapStateToProps = (state) => ({

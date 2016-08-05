@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import classes from './Withdraw.scss'
-import TopTab from 'components/TopTab'
+import TopTabGroup from 'components/TopTab'
 
 import { Table, Icon, DatePicker } from 'antd'
 const RangePicker = DatePicker.RangePicker
@@ -38,10 +38,13 @@ for (let i = 0; i < 100; i++) {
   });
 }
 
-
-export default class ListView extends Component {
+export default class WithdrawView extends Component {
 
   render () {
+
+    const { withdraw, changeType, fetchData } = this.props
+    const { type } = withdraw
+    fetchData()
 
     const onChange= (value, dateString) => {
       console.log(value)
@@ -60,38 +63,50 @@ export default class ListView extends Component {
       }
     }
 
+    const changeTypeHandle = (type) => {
+      changeType(type)
+    }
+
+    const moneyGroup = (
+      <div className={classes.money_right}>
+        <div className={classes.money_item}>
+          <span>申请中的金额</span>
+          <em>1,500</em>
+        </div>
+        <div className={classes.money_item}>
+          <span>申请中的金额</span>
+          <em>1,500</em>
+        </div>
+        <div className={classes.money_item}>
+          <span>申请中的金额</span>
+          <em>1,500</em>
+        </div>
+      </div>
+    )
+
+    const TypeTab = (
+      <div className={classes.type}>
+        <div onClick={changeTypeHandle.bind(this, 'all')} className={[classes.typeitem, type == 'all' ? classes.type_active : ''].join(' ')}>全部</div>
+        <div onClick={changeTypeHandle.bind(this, 'processing')} className={[classes.typeitem, type == 'processing' ? classes.type_active : ''].join(' ')}>申请中</div>
+        <div onClick={changeTypeHandle.bind(this, 'completed')} className={[classes.typeitem, type == 'completed' ? classes.type_active : ''].join(' ')}>已完成</div>
+      </div>
+    )
+
     return (
       <div>
-        <TopTab></TopTab>
+        <TopTabGroup></TopTabGroup>
 
         <div className={[classes.money_con, 'clearfix'].join(' ')}>
           <div className={[classes.money_item, classes.money_left].join(' ')}>
             <span>账户余额</span>
             <em>1,500</em>
           </div>
-          <div className={classes.money_right}>
-            <div className={classes.money_item}>
-              <span>申请中的金额</span>
-              <em>1,500</em>
-            </div>
-            <div className={classes.money_item}>
-              <span>申请中的金额</span>
-              <em>1,500</em>
-            </div>
-            <div className={classes.money_item}>
-              <span>申请中的金额</span>
-              <em>1,500</em>
-            </div>
-          </div>
+          {moneyGroup}
         </div>
 
         <div className={classes.con}>
           <div className={[classes.table_top, 'clearfix'].join(' ')}>
-            <div className={classes.type}>
-              <div className={classes.typeitem}>全部</div>
-              <div className={[classes.typeitem, classes.typeactive].join(' ')}>申请中</div>
-              <div className={classes.typeitem}>已完成</div>
-            </div>
+            {TypeTab}
             <div className={classes.date}>
               <RangePicker style={{ width: 246 }} onChange={onChange} />
             </div>

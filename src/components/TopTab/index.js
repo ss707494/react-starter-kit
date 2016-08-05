@@ -1,3 +1,3 @@
-import TopTab from './TopTab'
+import TopTabGroup from './TopTabGroup'
 
-export default TopTab
+export default TopTabGroup

@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import classes from './TopTab.scss'
 import { Link } from 'react-router'
 
-export default class TopTab extends Component {
+export default class TopTabGroup extends Component {
   render () {
 
     const conClass = [

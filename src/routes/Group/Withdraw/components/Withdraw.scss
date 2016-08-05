@@ -23,7 +23,6 @@
   color: #333333;
   padding: 8px 15px;
   border: 1px solid #e7e7ec;
-  border-right: none;
   font-size: 12px;
   line-height: 1;
   cursor: pointer;
@@ -35,20 +34,12 @@
   &:last-child {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
-    border: 1px solid #e7e7ec;
   }
 }
 
-.typeactive{
+.type_active{
   border: 1px solid #00b9fb;
   color: #00b9fb;
-
-  &:first-child {
-    border: 1px solid #00b9fb;
-  }
-  &:last-child {
-    border: 1px solid #00b9fb;
-  }
 }
 
 .date {

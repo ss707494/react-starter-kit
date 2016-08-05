@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import classes from './Reward.scss'
-import TopTab from 'components/TopTab'
+import TopTabGroup from 'components/TopTab'
 
 export default class ListView extends Component {
 
@@ -8,7 +8,7 @@ export default class ListView extends Component {
 
     return (
       <div>
-        <TopTab></TopTab>
+        <TopTabGroup />
         <h1>我的奖励</h1>
       </div>
     )
