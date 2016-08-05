@@ -36,7 +36,9 @@ export function fetchData () {
     dispatch(requestDate())
     return fetch('/api/posts')
       .then(data => data.text())
-      .then(text => dispatch(receiveData(text)))
+      .then(text => {
+        dispatch(receiveData(JSON.parse(text)))
+      })
   }
 }
 

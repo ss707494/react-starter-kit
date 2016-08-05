@@ -25,26 +25,18 @@ const columns = [{
   dataIndex: 'orderTime'
 }];
 
-const data = [];
-for (let i = 0; i < 100; i++) {
-  data.push({
-    key: i,
-    date: `2016-06-0${i}`,
-    amount: '$146.00',
-    orderNo: '21000*****00000',
-    orderName: '132*****655 (Alice)',
-    state: '申请中',
-    orderTime: '2016-06-06 11:16:32'
-  });
-}
-
 export default class WithdrawView extends Component {
+
+  componentDidMount () {
+    this.props.fetchData()
+  }
 
   render () {
 
-    const { withdraw, changeType, fetchData } = this.props
-    const { type } = withdraw
-    fetchData()
+    const { withdraw, changeType } = this.props
+    const { type, data } = withdraw
+
+    console.log(typeof data);
 
     const onChange= (value, dateString) => {
       console.log(value)
@@ -94,7 +86,7 @@ export default class WithdrawView extends Component {
 
     return (
       <div>
-        <TopTabGroup></TopTabGroup>
+        <TopTabGroup />
 
         <div className={[classes.money_con, 'clearfix'].join(' ')}>
           <div className={[classes.money_item, classes.money_left].join(' ')}>

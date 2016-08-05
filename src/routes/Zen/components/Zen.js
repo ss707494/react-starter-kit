@@ -2,10 +2,6 @@ import React, {Component} from 'react'
 import classes from './Zen.scss'
 import Loader from 'halogen/ClipLoader'
 
-const child = (item) => (
-  <h1 key={item.id}>{item.text}</h1>
-)
-
 export default class Zen extends Component {
 
   renderLoading () {
@@ -29,7 +25,7 @@ export default class Zen extends Component {
         </div>
         {this.renderLoading()}
         <div>
-          {text.map(child)}
+          <h1>{text.message}</h1>
         </div>
       </div>
     )

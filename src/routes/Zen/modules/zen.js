@@ -31,11 +31,13 @@ export const clearZen = () => ({
 export function fetchZen () {
   return (dispatch, getState) => {
     if (getState().zen.fetching) return
-    
+
     dispatch(requestZen())
     return fetch('https://api.github.com/zen')
-      .then(data => data.text())
-      .then(text => dispatch(receiveZen(text)))
+      .then(data => {
+        console.log(data)
+        dispatch(receiveZen(data))
+      })
   }
 }
 
