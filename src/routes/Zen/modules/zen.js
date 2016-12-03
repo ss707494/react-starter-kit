@@ -4,6 +4,7 @@
 const RECEIVE_ZEN = 'RECEIVE_ZEN'
 const REQUEST_ZEN = 'REQUEST_ZEN'
 const CLEAR_ZEN = 'CLEAR_ZEN'
+const SHOW_LIST = 'SHOW_LIST';
 
 import $ from 'jquery';
 // ------------------------------------
@@ -29,19 +30,33 @@ export const clearZen = () => ({
   type: CLEAR_ZEN
 })
 
+export const showList = (listData) => ({
+  type: SHOW_LIST,
+  listData
+})
+
 export function fetchZen() {
   return (dispatch, getState) => {
     if (getState().zen.fetching) return
 
     dispatch(requestZen());
-    // $.ajax('/api/api.github.com/zen');
+    $.ajax('/v2/movie/top250')
+      .done(res => {
+        // debugger
+
+      });
     return fetch('/v2/movie/top250')
-      .then(data => data.text())
-      .then(text => dispatch(receiveZen(text)))
+      .then(data =>  data.json())
+      // .then(data => {
+      //   debugger
+      //   dispatch(receiveZen(text))
+      // })
+      .then(data => dispatch(showList(data.subjects)))
   }
 }
 
 export const actions = {
+  showList,
   requestZen,
   receiveZen,
   clearZen,
@@ -60,6 +75,9 @@ const ACTION_HANDLERS = {
   },
   [CLEAR_ZEN]: (state) => {
     return ({...state, text: []})
+  },
+  [SHOW_LIST]: (state, action) => {
+    return ({...state, fetching: false, listData: action.listData})
   }
 }
 
@@ -68,7 +86,8 @@ const ACTION_HANDLERS = {
 // ------------------------------------
 const initialState = {
   fetching: false,
-  text: []
+  text: [],
+  listData: []
 }
 export default function (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]

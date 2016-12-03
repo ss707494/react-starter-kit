@@ -9,7 +9,7 @@ const paths = config.utils_paths
 
 
 app.use(require('./index_history')({
-  urlMatch: 'ifly'
+  urlMatch: config.base_url
 }))
 // app.use(require('connect-history-api-fallback')())
 // ------------------------------------

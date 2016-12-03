@@ -6,6 +6,12 @@ const child = (item) => (
   <h1 key={item.id}>{item.text}</h1>
 )
 
+const showImg = ({id, images}) => {
+  return (
+    <img key={id} src={images.medium} alt=""/>
+  )
+}
+
 export default class Zen extends Component {
 
   renderLoading () {
@@ -16,7 +22,7 @@ export default class Zen extends Component {
 
   render () {
     const { fetchZen, clearZen, zen } = this.props
-    const { fetching, text } = zen
+    const { fetching, text, listData = [] } = zen
 
     return (
       <div>
@@ -30,6 +36,9 @@ export default class Zen extends Component {
         {this.renderLoading()}
         <div>
           {text.map(child)}
+        </div>
+        <div>
+          {listData.map(showImg)}
         </div>
       </div>
     )
