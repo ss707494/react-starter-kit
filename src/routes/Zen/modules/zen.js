@@ -5,11 +5,12 @@ const RECEIVE_ZEN = 'RECEIVE_ZEN'
 const REQUEST_ZEN = 'REQUEST_ZEN'
 const CLEAR_ZEN = 'CLEAR_ZEN'
 
+import $ from 'jquery';
 // ------------------------------------
 // Actions
 // ------------------------------------
 
-function requestZen () {
+function requestZen() {
   return {
     type: REQUEST_ZEN
   }
@@ -28,12 +29,13 @@ export const clearZen = () => ({
   type: CLEAR_ZEN
 })
 
-export function fetchZen () {
+export function fetchZen() {
   return (dispatch, getState) => {
     if (getState().zen.fetching) return
 
-    dispatch(requestZen())
-    return fetch('https://api.github.com/zen')
+    dispatch(requestZen());
+    // $.ajax('/api/api.github.com/zen');
+    return fetch('/v2/movie/top250')
       .then(data => data.text())
       .then(text => dispatch(receiveZen(text)))
   }

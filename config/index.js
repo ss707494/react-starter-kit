@@ -58,7 +58,14 @@ const config = {
   coverage_reporters : [
     { type : 'text-summary' },
     { type : 'lcov', dir : 'coverage' }
-  ]
+  ],
+  alias: {
+    jquery: 'jquery'
+  },
+  proxy: {
+    target: 'http://api.douban.com/',
+    changeOrigin: true,
+  }
 }
 
 /************************************************

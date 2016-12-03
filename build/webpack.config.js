@@ -57,7 +57,9 @@ webpackConfig.plugins = [
       collapseWhitespace: true
     }
   })
-]
+];
+
+webpackConfig.resolve.alias = config.alias;
 
 if (__DEV__) {
   debug('Enable plugins for live development (HMR, NoErrors).')

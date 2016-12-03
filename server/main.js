@@ -7,26 +7,33 @@ const config = require('../config')
 const app = express()
 const paths = config.utils_paths
 
-// This rewrites all routes requests to the root /index.html file
-// (ignoring file requests). If you want to implement universal
-// rendering, you'll want to remove this middleware.
-app.use(require('connect-history-api-fallback')())
 
+app.use(require('./index_history')({
+  urlMatch: 'ifly'
+}))
+// app.use(require('connect-history-api-fallback')())
 // ------------------------------------
 // Apply Webpack HMR Middleware
 // ------------------------------------
 if (config.env === 'development') {
   const compiler = webpack(webpackConfig)
 
+  // var proxy = require("express-http-proxy");
+  // var apiProxy = proxy("www.baidu.com", {
+  //   forwardPath: function (req, res) {
+  //     return req._parsedUrl.path
+  //   }
+  // })
+  // app.use("/v2/*", apiProxy);
   debug('Enable webpack dev and HMR middleware')
   app.use(require('webpack-dev-middleware')(compiler, {
-    publicPath  : webpackConfig.output.publicPath,
-    contentBase : paths.client(),
-    hot         : true,
-    quiet       : config.compiler_quiet,
-    noInfo      : config.compiler_quiet,
-    lazy        : false,
-    stats       : config.compiler_stats
+    publicPath: webpackConfig.output.publicPath,
+    contentBase: paths.client(),
+    hot: true,
+    quiet: config.compiler_quiet,
+    noInfo: config.compiler_quiet,
+    lazy: false,
+    stats: config.compiler_stats
   }))
   app.use(require('webpack-hot-middleware')(compiler))
 
@@ -35,6 +42,19 @@ if (config.env === 'development') {
   // of development since this directory will be copied into ~/dist
   // when the application is compiled.
   app.use(express.static(paths.client('static')))
+
+  const httpProxy = require('http-proxy')
+
+  const proxy = httpProxy.createProxyServer(config.proxy);
+
+  // app.get('/ifly/**', function (req, res, next) {
+  //   req.url = '/index.html';
+  //   return next();
+  // })
+
+  app.all('/v2/**', function (req, res) {
+    proxy.web(req, res)
+  })
 } else {
   debug(
     'Server is being run outside of live development mode, meaning it will ' +
@@ -43,6 +63,11 @@ if (config.env === 'development') {
     'server such as nginx to serve your static files. See the "deployment" ' +
     'section in the README for more information on deployment strategies.'
   )
+
+// This rewrites all routes requests to the root /index.html file
+// (ignoring file requests). If you want to implement universal
+// rendering, you'll want to remove this middleware.
+  app.use(require('connect-history-api-fallback')())
 
   // Serving ~/dist by default. Ideally these files should be served by
   // the web server and not the app server, but this helps to demo the

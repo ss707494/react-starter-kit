@@ -28,6 +28,10 @@ export const Header = () => (
     <Link to='/notFound' activeClassName='route--active'>
       404
     </Link>
+    {' · '}
+    {/*<Link to='/ss' activeClassName='route--active'>*/}
+      {/*ss*/}
+    {/*</Link>*/}
   </div>
 )
 

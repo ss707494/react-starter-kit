@@ -2,6 +2,7 @@
 // Constants
 // ------------------------------------
 export const PLUS = 'PLUS'
+export const CLEAN = 'CLEAN'
 
 // ------------------------------------
 // Actions
@@ -14,7 +15,10 @@ export function plus () {
 }
 
 export const actions = {
-  plus
+  plus,
+  clean(){
+    return {type: CLEAN};
+  }
 }
 
 // ------------------------------------
@@ -23,6 +27,9 @@ export const actions = {
 const ACTION_HANDLERS = {
   [PLUS]: (state) => {
     return state + 1
+  },
+  [CLEAN]: (state) => {
+    return 0
   }
 }
 

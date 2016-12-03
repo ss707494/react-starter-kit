@@ -2,20 +2,24 @@ import React, {Component} from 'react'
 
 export default class Elapse extends Component {
 
-  componentDidMount () {
+  componentDidMount() {
     this.interval = setInterval(this.props.plus, 1000)
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     clearInterval(this.interval)
   }
 
-  render () {
+  render() {
     const {elapse} = this.props
     return (
-      <h1>
+
+      <div>
+  <h1>
         Seconds Elapsed: {elapse}
       </h1>
+        <button onClick={this.props.clean}>componentWillUnmount</button>
+      </div>
     )
   }
 }

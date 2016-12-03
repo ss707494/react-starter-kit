@@ -1,4 +1,4 @@
-import { injectReducer } from '../../store/reducers'
+import {injectReducer} from '../../store/reducers'
 
 export default (store) => ({
   path: 'elapse',
@@ -6,7 +6,7 @@ export default (store) => ({
     require.ensure([], (require) => {
       const Elapse = require('./containers/ElapseContainer').default
       const reducer = require('./modules/elapse').default
-      injectReducer(store, { key: 'elapse', reducer })
+      injectReducer(store, {key: 'elapse', reducer})
       cb(null, Elapse)
     })
   }
