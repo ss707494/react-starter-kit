@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import classes from './Zen.scss'
 import Loader from 'halogen/ClipLoader'
+import ListDate from './ListData'
 
 const child = (item) => (
   <h1 key={item.id}>{item.text}</h1>
@@ -37,9 +38,7 @@ export default class Zen extends Component {
         <div>
           {text.map(child)}
         </div>
-        <div>
-          {listData.map(showImg)}
-        </div>
+        <ListDate listData={listData}/>
       </div>
     )
   }
