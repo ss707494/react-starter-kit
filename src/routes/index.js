@@ -7,17 +7,17 @@ import ElapseRoute from './Elapse'
 import RouteRoute from './Route'
 import PageNotFound from './PageNotFound'
 import Redirect from './PageNotFound/redirect'
-import Ss from './Ss'
+// import Ss from './Ss'
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
 
 export const createRoutes = (store) => ({
-  path: '/ifly/',
+  path: '/',
   component: CoreLayout,
   indexRoute: Home,
   childRoutes: [
-    Ss(),
+    // Ss(),
     CounterRoute(store),
     ZenRoute(store),
     ElapseRoute(store),

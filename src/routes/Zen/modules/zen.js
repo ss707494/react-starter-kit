@@ -34,8 +34,7 @@ export function fetchZen() {
     if (getState().zen.fetching) return
 
     dispatch(requestZen());
-    // $.ajax('/api/api.github.com/zen');
-    return fetch('/v2/movie/top250')
+    return fetch('/iflyapi/activity/getList?currentPageNo=1&pageSize=20&orderType=1&fwly=&status=4%2C5%2C6')
       .then(data => data.text())
       .then(text => dispatch(receiveZen(text)))
   }

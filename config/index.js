@@ -62,10 +62,22 @@ const config = {
   alias: {
     jquery: 'jquery'
   },
-  proxy: {
-    target: 'http://api.douban.com/',
-    changeOrigin: true,
-  }
+  proxy_config:[
+    {
+      url: '/iflyapi',
+      proxyServerConfig: {
+        target: 'http://localhost:8096/iFly-SS-APP',
+        changeOrigin: true,
+      }
+    },
+    {
+      url: '/v2',
+      proxyServerConfig: {
+        target: 'http://api.douban.com/',
+        changeOrigin: true,
+      }
+    }
+  ],
 }
 
 /************************************************
