@@ -17,7 +17,7 @@ const config = {
   // ----------------------------------
   path_base  : path.resolve(__dirname, '..'),
   dir_client : 'src',
-  dir_dist   : 'dist',
+  dir_dist   : '../java-app/iFly-SS-APP/src/main/webapp/resources/dist/',
   dir_server : 'server',
   dir_test   : 'tests',
 
@@ -62,11 +62,12 @@ const config = {
   alias: {
     jquery: 'jquery'
   },
+  app_name: 'iFly-SS-APP',
   proxy_config:[
     {
-      url: '/iflyapi',
+      url: '/api',
       proxyServerConfig: {
-        target: 'http://localhost:8096/iFly-SS-APP',
+        target: 'http://localhost:8097/',
         changeOrigin: true,
       }
     },
@@ -134,6 +135,10 @@ config.utils_paths = {
   client : base.bind(null, config.dir_client),
   dist   : base.bind(null, config.dir_dist)
 }
+
+// alias
+config.alias.config = config.utils_paths.client('base', 'config.js');
+config.alias.customReducer = config.utils_paths.client('store', 'reducers.js');
 
 // ========================================================
 // Environment Configuration

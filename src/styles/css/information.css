@@ -1,0 +1,18 @@
+.information{
+    width: 100%;
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
+}
+
+.information .title{
+    font-size: 1.2rem;
+}
+
+.information span{
+    display: block;
+    line-height: 1.6rem;
+}
+
+.content{
+    padding: 0 1rem;
+}

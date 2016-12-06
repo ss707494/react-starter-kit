@@ -1,0 +1,429 @@
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+body, .wrap {
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+}
+
+.volunteer01, .volunteer02, .volunteer03, .volunteer04 {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.volunteer01 .title, .volunteer02 .title, .volunteer03 .title, .volunteer04 .title {
+    padding: 30px 0;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.wrap{
+    padding-top:2.5rem;
+    padding-bottom:1rem;
+    box-sizing: border-box;
+}
+
+.page, .page-group{
+    min-height: 100%;
+}
+.page.page-current{
+overflow-y: auto;
+}
+
+/**********volunteer01 HTML****************/
+
+.volunteer01 .type-list {
+    width: 70%;
+    margin: 30px auto;
+}
+
+.volunteer01 .type-list li {
+    position: relative;
+    float: left;
+    width: 50%;
+    margin-top: 90px;
+    margin-bottom: 30px;
+}
+
+.volunteer01 .type-list li a.type01, .volunteer01 .type-list li a.type02, .volunteer01 .type-list li a.type03, .volunteer01 .type-list li a.type04 {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: #b2b2b2;
+}
+
+.volunteer01 .type-list li a.type01:before, .volunteer01 .type-list li a.type02:before, .volunteer01 .type-list li a.type03:before, .volunteer01 .type-list li a.type04:before {
+    display: block;
+    position: absolute;
+    top: -90px;
+    left: 50%;
+    content: '';
+    margin-left: -45px;
+    background-color: #e9e9e9;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+}
+
+.volunteer01 .type-list li i.icon-search,
+.volunteer01 .type-list li i.icon-bag,
+.volunteer01 .type-list li i.icon-dianhua,
+.volunteer01 .type-list li i.icon-comment{
+    display: block;
+    position: absolute;
+    top: -54px;
+    left: 50%;
+    margin-left: -12px;
+    cursor: pointer;
+}
+
+.volunteer01 .type-list a.active{
+    color:#ff5152 !important;
+}
+
+.volunteer01 .type-list a.active:before{
+    background-color: #ff5152 !important;
+}
+
+.volunteer01 .type-list a.active + i.ui-icon{
+    color: #fff;
+}
+
+
+/********volunteer01 END***********/
+
+
+/********volunteer02 HTML***********/
+
+.volunteer02 .time-list {
+    width: 100%;
+}
+
+.volunteer02 .time-list tr {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+
+.volunteer02 .time-list th, .volunteer02 .time-list td {
+    text-align: center;
+    color: #c9c9c9;
+    border-right: 1px solid #c1c1c1;
+}
+
+.volunteer02 .time-list th:last-child, .volunteer02 .time-list td:last-child {
+    border: 0;
+}
+
+.volunteer02 .time-list th {
+    width: 25%;
+    height: 60px;
+    font-size: .4rem;
+    background-color: #fff;
+}
+
+.volunteer02 .time-list th:first-child {
+    font-size: .8rem;
+}
+
+.volunteer02 .time-list th span {
+    display: block;
+    font-size: 1rem;
+    color: #333;
+}
+
+.volunteer02 .time-list td {
+    height: 50px;
+}
+
+.volunteer02 .time-list td:first-child {
+    color: #666;
+    background-color: #fff;
+}
+
+.volunteer02 .time-list td:not(:first-child).active {
+    position: relative;
+    background-color: #fa5351;
+    color: #fa5351;
+}
+/*
+.volunteer02 .time-list td:not(:first-child).active:after {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: '';
+    margin: -15px 0 0 -16px;
+    background-color: #fa5351;
+    background-image: url(../img/true.jpg);
+    width: 35px;
+    height: 31px;
+}*/
+
+.volunteer02 .time-list td:not(:first-child).active .icon-check {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin:-0.7rem 0 0 -0.7rem;
+    color: #fff;
+    font-size: 1.4rem;
+    background-color: #fa5351;
+}
+
+/********volunteer02 END***********/
+
+
+/********volunteer03, volunteer04 HTML********/
+
+.volunteer03 .type-list, .volunteer04 .type-list {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.volunteer03 .type-list li, .volunteer04 .type-list li {
+    float: left;
+    width: 30%;
+    padding: 4px 0;
+    margin: 10px 3.33% 10px 0;
+    text-align: center;
+    background-color: #e9e9e9;
+    border-radius: 20px;
+}
+
+.volunteer03 .type-list li.active, .volunteer04 .type-list li.active {
+    background-color: #fa5351;
+}
+
+.volunteer03 .type-list li a, .volunteer04 .type-list li a {
+    color: #a4a4a4;
+    font-size: 1rem;
+}
+
+.volunteer03 .type-list li.active a, .volunteer04 .type-list li.active a {
+    color: #fff;
+}
+
+.volunteer03 #information, .volunteer04 #information {
+    width: 90%;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #c1c1c1;
+    background: #f5f5f5;
+    color: #aaa;
+}
+
+
+/********volunteer05 HTML********/
+
+.volunteer05 .main {
+    width: 100%;
+    padding: 0 1rem 1rem;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.volunteer05 .main .title {
+    text-align: center;
+    line-height: 2.5rem;
+    font-size: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.volunteer05 .main p {
+    line-height: 1.5rem;
+}
+
+.volunteer05 .main .person {
+    float: right;
+}
+
+.volunteer05 .main .person i{
+    font-style: normal;
+}
+
+.volunteer05 .main div:first-child {
+    padding: 0 2rem;
+}
+
+.volunteer05 .main div:first-child span:first-child {
+    display: block;
+    margin: .6rem 0;
+}
+
+.volunteer05 .main span {
+    display: block;
+}
+
+.volunteer05 .service-list {
+    margin-top: 1rem;
+    padding: 0 1rem;
+    background: #fff;
+}
+
+.volunteer05 .service-list li {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.volunteer05 .service-list li a {
+    color: #333;
+    font-size: .9rem;
+    letter-spacing: 1px;
+}
+
+.volunteer05 .service-list li span {
+    float: right;
+    color: #999;
+    font-size: .9rem;
+    line-height: 2.5rem;
+}
+
+.volunteer05 .tips {
+    padding: 1rem;
+    color: #b9b9b9;
+    background: #fff;
+}
+
+.volunteer05 .join {
+    display: block;
+    width: 96%;
+    height: 2.5rem;
+    margin: 1.25rem auto;
+    line-height: 2.5rem;
+    font-size: 1.2rem;
+    letter-spacing: .125rem;
+    text-align: center;
+    color: #fff;
+    background-color: #fa5351;
+    border-radius: .25rem;
+}
+
+.submit-icon{
+    position: relative;
+    text-align: center;
+}
+
+.submit-icon .ui-icon{
+    color:#ff5152;
+    font-size: 2rem;
+}
+
+.submit-icon span{
+    display: block;
+}
+
+
+/**********volunteer06 *************/
+.volunteer06{
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.volunteer06 .main > div{
+    float: right;
+}
+
+.volunteer06 .main .change{
+    display: inline;
+    margin-left: 1rem;
+    color: #f6895f;
+}
+
+.volunteer06 .main {
+    padding: .5rem 0;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.volunteer06 .communityList{
+    border-bottom: 0;
+}
+
+.volunteer06 ul.type-list{
+    padding-top: 1rem;
+}
+
+.volunteer06 ul.type-list li{
+    float: left;
+    padding: .2rem .5rem;
+    margin: .2rem;
+    background: #fff;
+}
+
+.volunteer06 ul.type-list li.active{
+    background-color: #fa5351;
+}
+
+.volunteer06 ul.type-list li.active a{
+    color:#fff;
+}
+
+/********** volunteer07 **************/
+#volunteer07{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 0;
+    background-color: #fff;
+    text-align: center;
+}
+#volunteer07 .success-img{
+    width: 70%;
+    margin: 2rem auto;
+    text-align: center;
+}
+#volunteer07 .success-img img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+#volunteer07 .success-main{
+    width: 70%;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: #858585;
+    text-align: center;
+}
+
+#volunteer07 .success-bottom{
+    position: absolute;
+    bottom: 1.5rem;
+    left:0;
+    width: 100%;
+    box-sizing: border-box;
+    color:#969696;
+}
+#volunteer07 .success-bottom span{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+#volunteer07 .success-bottom a{
+    color:#fa5250;
+    text-decoration: underline;
+}
+
+/*****************/
+.join-success {
+    padding: 1rem;
+    font-size: .8rem;
+    text-align: center;
+}
+
+.join-success i.icon-roundcheck{
+    font-size: 4rem;
+    color: #49AA47;
+}
+
+.join-success span{
+    display: block;
+    font-size: 1.2rem;
+}

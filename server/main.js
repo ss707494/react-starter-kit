@@ -10,9 +10,13 @@ const paths = config.utils_paths
 if (config.env === 'development' && config.proxy_config && config.proxy_config.length > 0) {
   const httpProxy = require('http-proxy')
   config.proxy_config.map(function (e) {
-    app.all(e.url + '/**', function (req, res) {
-      req.url = req.url.replace(e.url, '');
-      httpProxy.createProxyServer(e.proxyServerConfig).web(req, res)
+    app.all('/'+ config.app_name + e.url + '/**', function (req, res) {
+      // req.url = req.url.replace(e.url, '');
+      try {
+        httpProxy.createProxyServer(e.proxyServerConfig).web(req, res)
+      } catch(e) {
+        console.log(e);
+      }
     });
   });
 }

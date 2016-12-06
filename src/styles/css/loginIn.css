@@ -1,0 +1,156 @@
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+body, .wrap {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.wrap{
+    padding:4rem 1rem 1rem;
+    box-sizing: border-box;
+}
+
+.login > div{
+    position: relative;
+}
+
+.login .logo{
+    width: 8rem;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.login .logo img{
+    width: 50%;
+    max-width: 100%;
+    height: auto;
+}
+
+.login .logo span{
+    display: block;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.login .icon-my,
+.login .icon-suo{
+    position: absolute;
+    top: .8rem;
+    left: .5rem;
+    font-size: 1.5rem;
+    color: #ededed;
+}
+
+.login .icon-attention{
+    position: absolute;
+    top: .8rem;
+    right: .5rem;
+    font-size: 1.5rem;
+    color: #ededed;
+}
+
+input {
+    border: 1px solid #efebef;
+    width: 100%;
+    height: 3rem;
+    padding: 0 3rem;
+    -webkit-user-modify: read-write-plaintext-only;
+}
+
+.login i.icon-my + input[type='text']{
+    border-bottom: 0;
+}
+
+
+i.icon-lock{
+    display: inline-block;
+    content: '';
+    background-image: url(../img/lock.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+i.icon-show{
+    display: inline-block;
+    content: '';
+    background-image: url(../img/show.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 2rem;
+    height: 1.5rem;
+}
+
+#submit-btn{
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+    margin: 1.25rem auto;
+    line-height: 2.5rem;
+    font-size: 1.2rem;
+    letter-spacing: .125rem;
+    text-align: center;
+    color: #fff;
+    background-color: #fa5351;
+    border-radius: .25rem;
+}
+
+.regist{
+    float: left;
+    color: #848284;
+}
+
+.forget{
+    float: right;
+    color: #848284;
+}
+
+.mask-show{
+    line-height: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.mask-show img{
+    display: block;
+    width: 40%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.mask-show span{
+    display: block;
+    color: #000;
+}
+
+.mask-show .font-color{
+    color: #fa5351;
+}
+
+#download-btn{
+    display: block;
+    line-height: 3rem;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 98;
+    background-color: #000;
+    opacity: .5;
+    filter: alpha(50);
+    z-index: 98;
+}

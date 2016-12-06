@@ -1,0 +1,230 @@
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.ui-scroll-wrapper{
+    top:5rem;
+}
+
+.icon-unfold,
+.icon-fold{
+    font-size: 1rem;
+}
+
+.wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 5rem;
+    background-color: #fff;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*display: none;*/
+    width: 100%;
+    height: 100%;
+    z-index: 98;
+    background-color: #000;
+    opacity: .5;
+    filter: alpha(50);
+}
+
+.nav-box {
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    width: 100%;
+    height: 2.5rem;
+    z-index: 99;
+    background-color: #fff;
+}
+
+.nav {
+    width: 100%;
+    height: 100%;
+}
+
+.nav ul {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav li {
+    float: left;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 0 .5rem;
+    margin: .5rem 0;
+    text-align: center;
+}
+
+.nav li:first-child{
+    border-right: 1px solid #ddd;
+}
+
+.nav li a {
+    position: relative;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.nav li div.active{
+    color: #fa5351;
+}
+
+.nav li div.active a{
+    color: #fa5351;
+}
+
+.nav-list {
+    background-color: #fff;
+}
+
+.nav-list .sort, .nav-list .type {
+    /*display: none;*/
+    padding: 0 .5rem;
+}
+
+.nav-list .sort li {
+    height: 40px;
+    line-height: 40px;
+}
+
+.nav-list .sort li.active {
+    position: relative;
+    color: #fa5351;
+}
+
+.nav-list .sort li.active .icon-check {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -10px;
+    display: inline-block;
+    content: "";
+}
+
+.nav-list .type li {
+    float: left;
+    width: 30%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    margin: 1.5%;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    text-align: center;
+    color: #b1b1b1;
+}
+
+.nav-list .type li.active {
+    color: #fff;
+    background-color: #fa5351;
+}
+
+.nav-list .type a {
+    display: block;
+    text-align: center;
+    line-height: 3rem;
+    font-size: 1.2rem;
+    color: #7a7a7a;
+    border-top: 1px solid #dfdfdf;
+}
+
+.my-activities {
+    width: 100%;
+    padding: 0 .5rem;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+div.title {
+    padding: .625rem 0;
+    text-align: left;
+}
+
+.my-activitie-box {
+    box-sizing: border-box;
+    width: 100%;
+    padding: .5rem 0;
+    text-align: left;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.my-activitie-box>div {
+    float: left;
+}
+
+.my-activitie-box .img {
+    position: relative;
+    width: 20%;
+}
+
+.my-activitie-box .img img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.my-activitie-box .details {
+    position: relative;
+    box-sizing: border-box;
+    width: 65%;
+    padding-left: .625rem;
+}
+
+.my-activitie-box .details .title {
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.icon-male{
+    color: #22BFF4;
+    font-size: 22px;
+}
+
+.icon-female{
+    color: #FD6A9E;
+    font-size: 22px;
+}
+
+.details .tag {
+    width: 100%;
+    margin: 0;
+    font-size: 0;
+}
+
+.details .tag .tag-item {
+    display: inline-block;
+    width: 3.5rem;
+    padding: 0 .125rem;
+    margin: .125rem;
+    border-radius: .125rem;
+    text-align: center;
+    color: #fff;
+    font-size: .75rem;
+}
+
+.details>span {
+    display: block;
+    line-height: 1.3rem;
+}
+
+.details i {
+    font-style: normal;
+}

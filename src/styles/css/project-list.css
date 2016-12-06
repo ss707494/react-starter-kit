@@ -1,0 +1,231 @@
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+}
+
+.wrap{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 44px;
+    background-color: #fff;
+}
+
+.mask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 98;
+    background-color: #000;
+    opacity: .5;
+    filter: alpha(50);
+}
+
+.nav-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 44px;
+    z-index: 99;
+    background-color: #fff;
+}
+
+.nav {
+    width: 100%;
+    height: 100%;
+}
+
+.nav ul {
+    width: 100%;
+    height: 100%;
+}
+
+.nav li {
+    float: left;
+    box-sizing: border-box;
+    width: 33.3%;
+    padding: .5rem;
+}
+
+.nav li a {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.nav li a:after{
+    display: inline-block;
+    content: '';
+    background-image: url(../img/arrow_down.png);
+    width: 17px;
+    height: 10px;
+    margin-bottom:2px;
+    margin-left: .2rem;
+}
+
+.nav-list{
+    background-color: #fff;
+}
+
+.nav-list .sort,
+.nav-list .type,
+.nav-list .status{
+    display: none;
+    padding: 0 .5rem;
+}
+
+.nav-list .sort li,
+.nav-list .status li{
+    height: 40px;
+    line-height: 40px;
+}
+
+.nav-list .sort li.active,
+.nav-list .status li.active{
+    position: relative;
+    color: #fa5351;
+}
+
+.nav-list .sort li.active:after,
+.nav-list .status li.active:after{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -10px;
+    display: inline-block;
+    content: "";
+    background-image: url('../img/true.png');
+    width: 20px;
+    height: 18px;
+}
+
+.nav-list .type li{
+    float: left;
+    width: 30%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    margin: 1.5%;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    text-align: center;
+    color: #b1b1b1;
+}
+
+.nav-list .type li.active{
+    color: #fff;
+    background-color: #fa5351;
+}
+
+.nav-list .type a {
+    display: block;
+    text-align: center;
+    line-height: 3rem;
+    font-size: 1.2rem;
+    color: #7a7a7a;
+}
+
+.my-activities{
+    width: 100%;
+    padding: 0 .5rem;
+    box-sizing: border-box;
+}
+
+div.title {
+    padding: .625rem 0;
+    text-align: left;
+}
+
+.my-activities {
+    padding: 0 .5rem;
+    text-align: center;
+    /*padding-top: 2.5rem;*/
+}
+
+.my-activitie-box{
+    box-sizing: border-box;
+    width: 100%;
+    margin: .5rem 0 .5rem 0;
+    text-align: left;
+}
+
+.my-activitie-box > div{
+    float: left;
+}
+
+.my-activitie-box .img{
+    position: relative;
+    width: 35%;
+    /*max-height: 6rem;*/
+    /*overflow: hidden;*/
+}
+
+.my-activitie-box .img img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.my-activitie-box .details{
+    position: relative;
+    box-sizing: border-box;
+    width: 65%;
+    padding-left: .625rem;
+}
+
+.my-activitie-box .details .title{
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.my-activitie-box .img .status {
+    display: block;
+    position: absolute;
+    top: .625rem;
+    right: 0;
+    width: 50px;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px 0 0 10px;
+    font-size: .75rem;
+}
+
+.details .tag{
+    width: 100%;
+    margin: .375rem 0;
+    font-size: 0;
+}
+
+.details .tag .tag-item{
+    display: inline-block;
+    width: 3.5rem;
+    padding: 0 .125rem;
+    margin: .125rem;
+    border-radius: .125rem;
+    text-align: center;
+    color: #fff;
+    font-size: .75rem;
+}
+
+.my-activitie-box .address {
+    color: #666666;
+    margin-right: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 44%;
+}

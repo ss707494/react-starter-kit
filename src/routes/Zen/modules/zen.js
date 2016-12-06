@@ -1,6 +1,7 @@
 // ------------------------------------
 // Constants
 // ------------------------------------
+import config from 'config'
 const RECEIVE_ZEN = 'RECEIVE_ZEN'
 const REQUEST_ZEN = 'REQUEST_ZEN'
 const CLEAR_ZEN = 'CLEAR_ZEN'
@@ -32,9 +33,8 @@ export const clearZen = () => ({
 export function fetchZen() {
   return (dispatch, getState) => {
     if (getState().zen.fetching) return
-
     dispatch(requestZen());
-    return fetch('/iflyapi/activity/getList?currentPageNo=1&pageSize=20&orderType=1&fwly=&status=4%2C5%2C6')
+    return fetch(config.baseApi('/activity/getList?currentPageNo=1&pageSize=20&orderType=1&fwly=&status=4%2C5%2C6'))
       .then(data => data.text())
       .then(text => dispatch(receiveZen(text)))
   }

@@ -1,0 +1,51 @@
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+.wrap{
+    padding-top: 2.5rem;
+}
+.information{
+    width: 100%;
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
+}
+
+.information .title{
+    font-size: 1.2rem;
+}
+
+.information span{
+    /*display: block;*/
+    line-height: 1.6rem;
+}
+
+
+.information .time:before {
+    display: inline-block;
+    content: '';
+    /*background-image: url(../img/sprite.png);*/
+    /*background-position: -76px -19px;*/
+    /*width: 16px;*/
+    /*height: 18px;*/
+    /*vertical-align: text-bottom;*/
+}
+
+.information .address:before {
+    display: inline-block;
+    content: '';
+    /*background-image: url(../img/sprite.png);*/
+    /*background-position: -76px -54px;*/
+    /*width: 16px;*/
+    /*height: 17px;*/
+    /*vertical-align: text-bottom;*/
+}
+
+.content{
+    padding: 0 1rem;
+}
+
+.information i {
+    font-size: 1rem;
+}
