@@ -138,6 +138,7 @@ config.utils_paths = {
 
 // alias
 config.alias.config = config.utils_paths.client('base', 'config.js');
+config.alias.baseUtil = config.utils_paths.client('base', 'baseUtil.js');
 config.alias.customReducer = config.utils_paths.client('store', 'reducers.js');
 
 // ========================================================

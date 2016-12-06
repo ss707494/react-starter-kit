@@ -7,6 +7,9 @@ const child = (item) => (
 )
 
 export default class Zen extends Component {
+  componentDidMount() {
+    this.dispatch
+  }
 
   renderLoading () {
     return (this.props.zen.fetching)
