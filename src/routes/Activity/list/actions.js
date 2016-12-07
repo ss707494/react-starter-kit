@@ -10,9 +10,7 @@ export const mapDispatchtoProps = {}
 
 mapDispatchtoProps.initList = listData => ({
   type: INIT_LIST,
-  action: {
-    listData
-  }
+  listData
 })
 
 export const initialState = {
@@ -21,8 +19,8 @@ export const initialState = {
 }
 
 export const action_handlers = {
-  [INIT_LIST]: (state, action) => {
-    return ({...state, listData: action.listData})
+  [INIT_LIST]: (state, {listData}) => {
+    return {...state, listData}
   }
 }
 

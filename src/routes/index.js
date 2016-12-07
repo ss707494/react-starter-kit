@@ -18,7 +18,6 @@ export const createRoutes = (store) => ({
   component: CoreLayout,
   indexRoute: Home,
   childRoutes: [
-    // Ss(),
     Activity(store),
     CounterRoute(store),
     ZenRoute(store),
