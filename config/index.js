@@ -144,6 +144,7 @@ config.alias.fly = config.utils_paths.client('lib', 'flyui', 'flyui.mobile.js');
 
 // noParse
 config.noParse = [
+  // /flyui/
 ]
 
 // ========================================================

@@ -7,5 +7,6 @@ const config = {
 }
 
 config.baseApi = apiUrl => '/' + config.app_name + '/api' + apiUrl;
+config.baseUrl = url => '/' + config.app_name +  url;
 
 export default config;
