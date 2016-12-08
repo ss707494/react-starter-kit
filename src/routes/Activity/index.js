@@ -1,5 +1,4 @@
-import {injectReducer} from 'customReducer'
-// import List from './List';
+import {initRoutesAsyn} from 'baseUtil'
 
 export default (store) => ({
 
@@ -8,21 +7,9 @@ export default (store) => ({
   childRoutes: [
     'list',
     'detail/:id'
-  ].map(initRoutes(store)),
+  ].map(initRoutesAsyn(store)),
 })
 
-const initRoutes = store => path => ({
-  path,
-  getComponent (nextState, cb) {
-    const end = path.indexOf('/');
-    const _path = end !== -1 ? path.substring(0, end) : path;
-    require.ensure(['baseUtil'], (require) => {
-      const baseUtil = require('baseUtil');
-      const {container} = require(`./${_path}/containers`);
-      const actions = require(`./${_path}/actions`);
-      const conta = baseUtil.initContainer(store)(container, actions);
-      cb(null, conta)
-    })
-  }
-})
+
+
 

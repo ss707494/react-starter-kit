@@ -9,6 +9,7 @@ import PageNotFound from './PageNotFound'
 import Redirect from './PageNotFound/redirect'
 // import Ss from './Ss'
 import Activity from './Activity';
+import {initRoutesAsyn} from 'baseUtil'
 
 /*  Note: Instead of using JSX, we recommend using react-router
  PlainRoute objects to build route definitions.   */
@@ -18,6 +19,7 @@ export const createRoutes = (store) => ({
   component: CoreLayout,
   indexRoute: Home,
   childRoutes: [
+    initRoutesAsyn(store)('todoDemo'),
     Activity(store),
     CounterRoute(store),
     ZenRoute(store),

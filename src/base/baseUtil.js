@@ -20,3 +20,18 @@ const initReducer = (initialState, action_handlers) => (state, action) => {
   const _state = state || initialState;
   return handler ? handler(_state, action) : _state
 }
+
+export const initRoutesAsyn = store => (path, parentPath = '') => ({
+  path,
+  getComponent (nextState, cb) {
+    const end = path.indexOf('/');
+    const _path = (end !== -1 ? path.substring(0, end) : path) + parentPath;
+    require.ensure([], (require) => {
+      const baseUtil = require('baseUtil');
+      const {container} = require('routes/'+_path+'/containers');
+      const actions = require('routes/'+_path+'/actions');
+      const conta = baseUtil.initContainer(store)(container, actions);
+      cb(null, conta)
+    })
+  }
+})
