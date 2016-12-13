@@ -1,0 +1,83 @@
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+}
+
+.wrap{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    /*background-color: #f5f5f5;*/
+}
+
+.wrap .section{
+    width: 100%;
+    padding: .4rem .2rem;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.section>div {
+    /*float: left;*/
+}
+.wrap .section img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.wrap .section .img-box{
+    display: flex;
+    margin-top: .25rem;
+    max-height: 7.5rem;
+    overflow: hidden;
+    /*position: relative;*/
+    /*width: 49%;*/
+}
+.wrap .section .img-box span {
+    -webkit-flex: 1;
+    flex: 1;
+}
+.wrap .section .img{
+    margin: 0 .2rem;
+    width: 49%;
+    position: relative;
+    /*width: 49%;*/
+}
+.section .detail {
+    position: relative;
+    width: 65%;
+}
+
+.section span{
+    ling-height:1.5rem;
+    color: #a7a7a7;
+}
+
+.section span b{
+    color:#444;
+    margin-right: 6px; 
+}
+
+.section .time:before {
+    display: inline-block;
+    content: '';
+    background-image: url(../img/sprite.png);
+    background-position: -76px -19px;
+    width: 16px;
+    height: 18px;
+    vertical-align: text-bottom;
+}
+
+.ui-scroll-wrapper {
+    background-color: #f7f7ff;
+}

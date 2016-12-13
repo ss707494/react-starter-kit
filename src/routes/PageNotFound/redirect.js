@@ -2,7 +2,7 @@ export default {
   path: '*',
   indexRoute: {
     onEnter (nextState, replace) {
-      replace('/404')
+      replace('/iFly-SS-APP/404')
     }
   }
 }

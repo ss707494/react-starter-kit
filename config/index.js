@@ -10,42 +10,42 @@ debug('Creating default configuration.')
 // Default Configuration
 // ========================================================
 const config = {
-  env: process.env.NODE_ENV || 'development',
+  env : process.env.NODE_ENV || 'development',
 
   // ----------------------------------
   // Project Structure
   // ----------------------------------
-  path_base: path.resolve(__dirname, '..'),
-  dir_client: 'src',
-  dir_dist: 'dist',
-  dir_server: 'server',
-  dir_test: 'tests',
+  path_base  : path.resolve(__dirname, '..'),
+  dir_client : 'src',
+  dir_dist   : '../java-app/iFly-SS-APP/src/main/webapp/resources/dist/',
+  dir_server : 'server',
+  dir_test   : 'tests',
 
   // ----------------------------------
   // Server Configuration
   // ----------------------------------
-  server_host: ip.address(), // use string 'localhost' to prevent exposure on local network
-  server_port: process.env.PORT || 3000,
+  server_host : ip.address(), // use string 'localhost' to prevent exposure on local network
+  server_port : process.env.PORT || 3000,
 
   // ----------------------------------
   // Compiler Configuration
   // ----------------------------------
-  compiler_babel: {
-    cacheDirectory: true,
-    plugins: ['transform-runtime'],
-    presets: ['es2015', 'react', 'stage-0']
+  compiler_babel : {
+    cacheDirectory : true,
+    plugins        : ['transform-runtime'],
+    presets        : ['es2015', 'react', 'stage-0']
   },
-  compiler_devtool: 'source-map',
-  compiler_hash_type: 'hash',
-  compiler_fail_on_warning: false,
-  compiler_quiet: false,
-  compiler_public_path: '/',
-  compiler_stats: {
-    chunks: false,
-    chunkModules: false,
-    colors: true
+  compiler_devtool         : 'source-map',
+  compiler_hash_type       : 'hash',
+  compiler_fail_on_warning : false,
+  compiler_quiet           : false,
+  compiler_public_path     : '/',
+  compiler_stats           : {
+    chunks : false,
+    chunkModules : false,
+    colors : true
   },
-  compiler_vendors: [
+  compiler_vendors : [
     'react',
     'react-redux',
     'react-router',
@@ -55,11 +55,30 @@ const config = {
   // ----------------------------------
   // Test Configuration
   // ----------------------------------
-  coverage_reporters: [
-    {type: 'text-summary'},
-    {type: 'lcov', dir: 'coverage'}
+  coverage_reporters : [
+    { type : 'text-summary' },
+    { type : 'lcov', dir : 'coverage' }
   ],
-};
+  alias: {
+  },
+  app_name: 'iFly-SS-APP',
+  proxy_config:[
+    {
+      url: '/api',
+      proxyServerConfig: {
+        target: 'http://localhost:8097/',
+        changeOrigin: true,
+      }
+    },
+    {
+      url: '/v2',
+      proxyServerConfig: {
+        target: 'http://api.douban.com/',
+        changeOrigin: true,
+      }
+    }
+  ],
+}
 
 /************************************************
 -------------------------------------------------
@@ -116,15 +135,17 @@ config.utils_paths = {
   dist   : base.bind(null, config.dir_dist)
 }
 
-config.alias = {
-  jquery: 'jquery',
-    // config: config.utils_paths.client('../config')
-}
-config.proxy = {
-  target: 'http://api.douban.com/',
-    changeOrigin: true,
-}
-config.base_url = 'fly'
+// alias
+config.alias.config = config.utils_paths.client('base', 'config.js');
+config.alias.baseUtil = config.utils_paths.client('base', 'baseUtil.js');
+config.alias.customReducer = config.utils_paths.client('store', 'reducers.js');
+config.alias.zepto = config.utils_paths.client('lib', 'zepto.full.min.js');
+config.alias.fly = config.utils_paths.client('lib', 'flyui', 'flyui.mobile.js');
+
+// noParse
+config.noParse = [
+  // /flyui/
+]
 
 // ========================================================
 // Environment Configuration

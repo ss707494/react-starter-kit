@@ -8,7 +8,14 @@ exports = module.exports = function historyApiFallback(options) {
 
   return function(req, res, next) {
     var headers = req.headers;
-    if (req.method !== 'GET' || !req.url.match(options.urlMatch)) {
+    if (options.proxy.length > 0) {
+      options.proxy.map(e => {
+        if (e.url.test(req.url)) {
+          e.proxyServer.web(req, res);
+          return
+        }
+      });
+    }else if (req.method !== 'GET' || !req.url.match(options.urlMatch)) {
       logger(
         'Not rewriting',
         req.method,

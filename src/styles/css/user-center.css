@@ -1,0 +1,259 @@
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+.wrap{
+    padding-top: 2.5rem;
+    background-color: #f5f5f5;
+}
+
+.wrap>div{
+    background-color: #fff;
+}
+
+.information{
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding: .625rem;
+}
+
+.information > div{
+    float: left;
+}
+
+.information .img,
+.nologin-img{
+    position: relative;
+    width: 15%;
+    height:auto;
+}
+
+.information .img img,
+.nologin-img img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.nologin-title{
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    margin-top: -0.7rem;
+}
+
+.information .details{
+    position: relative;
+    box-sizing: border-box;
+    padding-left: .625rem;
+}
+
+.information .details .title{
+    margin-bottom: .5rem;
+    font-size: .9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.icon-male{
+    color: #22BFF4;
+    font-size: 22px;
+}
+
+.icon-female{
+    color: #FD6A9E;
+    font-size: 22px;
+}
+
+.details .tag{
+    float: left;
+    font-size: 0;
+}
+
+.tag-item{
+    display: inline-block;
+    width: 3.5rem;
+    padding: 0 .125rem;
+    margin: .125rem;
+    border-radius: .125rem;
+    text-align: center;
+    color: #fff;
+    font-size: .75rem;
+}
+
+
+.main{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 .625rem;
+    margin: .625rem 0;
+}
+
+.join{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 .625rem;
+}
+
+.activite-list{
+    background-color: #f5f5f5;
+}
+
+.activite-list li{
+    line-height: 2.5rem;
+    background-color: #fff;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.activite-list>a {
+    display: block;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.activite-list li:last-child{
+    border-bottom: 0;
+}
+
+.activite-list li a{
+    color: #333;
+    font-size: .9rem;
+    letter-spacing: 1px;
+    vertical-align: top;
+}
+
+.activite-list li i{
+    font-style: normal;
+}
+
+.activite-list li .f-r,
+.activite-list li .icon-right,
+.activite-list li .skill{
+    float: right;
+    color: #999;
+}
+
+.icon-right:before {
+    content: "\e6a3";
+    line-height: 2.5rem;
+    font-size: 1.2rem;
+}
+
+.user-img{
+    float: right;
+    width: 2rem;
+    height: auto;
+    max-height: 2.5rem;
+}
+
+.user-img img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.community,.certification,.exit{
+    margin-bottom: .625rem;
+}
+
+/*.no-login .set,
+.no-login .about{
+    display: inline-block;
+}*/
+
+.no-login .set:before{
+    display: inline-block;
+    content: "";
+    width: 30px;
+    height:31px;
+    background-image: url(../img/set.png);
+    vertical-align: middle;
+}
+
+/*.no-login .about:before{
+    display: inline-block;
+    content: "";
+    width: 30px;
+    height:31px;
+    background-image: url(../img/about.png);
+    vertical-align: middle;
+}*/
+
+.no-login .icon-info{
+    background: #fff;
+    color: #ff5152;
+    line-height: 2.5rem;
+    margin-right: .5rem;
+}
+
+.no-login .icon-info:before{
+    content: "\e6e5";
+    font-size: 1.1rem;
+}
+.join>a{
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+    margin-top: 1.25rem;
+    line-height: 2.5rem;
+    font-size: 1.2rem;
+    letter-spacing: .125rem;
+    text-align: center;
+    color: #fff;
+    background-color: #fa5351;
+    border-radius: .25rem;
+}
+
+#aboutUs .wrap{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 4rem 1.5rem 1.5rem;
+    line-height: 1.5rem;
+
+}
+
+#aboutUs .wrap > div{
+    background-color: #f5f5f5;
+}
+
+#aboutUs .qrcode{
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+}
+#aboutUs .qrcode img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+#aboutUs .wrap > span{
+    display: block;
+    width: 100%;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+#aboutUs .bottom{
+    position: absolute;
+    bottom: 1.5rem;
+    left:0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#aboutUs .bottom span{
+    display: block;
+    width: 100%;
+    text-align: center;
+
+}

@@ -59,7 +59,11 @@ webpackConfig.plugins = [
   })
 ];
 
+// alias
 webpackConfig.resolve.alias = config.alias;
+
+// noParse
+webpackConfig.module.noParse = config.noParse;
 
 if (__DEV__) {
   debug('Enable plugins for live development (HMR, NoErrors).')
