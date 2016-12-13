@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import config from 'config'
 import './active-list.css'
 import 'zepto'
-import 'fly'
+// import 'fly'
 import {browserHistory} from 'react-router'
 
 const initList = (listData) => {

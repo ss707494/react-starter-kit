@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import config from 'config'
 // import './active-list.css'
 import 'zepto'
-import 'fly'
+// import 'fly'
 import {browserHistory} from 'react-router'
 
 const initList = (listData) => {
@@ -42,24 +42,6 @@ const goToDetail_2 = id => events => {
 class List extends Component {
 
   componentDidMount() {
-    // fetch(config.baseApi('/activity/getList?currentPageNo=1&pageSize=20&orderType=1&fwly=&status=4%2C5%2C6'))
-    //   .then(data => data.json())
-    //   .then(res => this.props.initList(res.rows || []))
-    //   .catch(rese);
-    // $("#pullrefresh").pullRefresh({
-    //   down: {
-    //     callback: function() {
-    //       // getList({isNew: true});
-    //     }
-    //   },
-    //   up: {
-    //     callback: function() {
-    //       // var searchParam = viewModel.searchParam;
-    //       // searchParam.currentPageNo(searchParam.currentPageNo() + 1);
-    //       // getList({isAdd: true});
-    //     }
-    //   }
-    // });
   }
 
   componentWillUnmount() {
@@ -69,7 +51,9 @@ class List extends Component {
     const {name , listData} = this.props.activity
     return (
     <div id="pullrefresh" className="floatfix ui-scroll-wrapper_">
-      sldkfjsdlkjfsldfkj
+      <main>
+        <input type="color"/>
+      </main>
     </div>
     )
   }
