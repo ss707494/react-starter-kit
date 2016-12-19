@@ -21,8 +21,9 @@ export class HomeView extends React.Component {
   }
 
   render() {
-    return <div>
+    return <div className="box">
       <h4>Welcome!</h4>
+      <Link to={config.baseUrl('/todoDemo')} >todoDemo</Link>
       <h2>{this.state.url}</h2>
       <input type="text" onChange={this.urlChange.bind(this)}/>
       <Link to={config.baseUrl('/'+this.state.url)} activeClassName='route--active'>

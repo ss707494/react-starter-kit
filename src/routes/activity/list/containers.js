@@ -42,7 +42,7 @@ const goToDetail_2 = id => events => {
 class List extends Component {
 
   componentDidMount() {
-    fetch(config.baseApi('/activity/getList?currentPageNo=1&pageSize=20&orderType=1&fwly=&status=4%2C5%2C6'))
+    fetch(config.baseApi('/activity/getList?currentPageNo=1&pageSize=20&orderType=1'))
       .then(data => data.json())
       .then(res => this.props.initList(res.rows || []))
     // $("#pullrefresh").pullRefresh({

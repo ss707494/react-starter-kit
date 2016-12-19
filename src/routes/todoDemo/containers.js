@@ -4,40 +4,40 @@ import config from 'config'
 import 'zepto'
 // import 'fly'
 import {browserHistory} from 'react-router'
+import './box.css'
 
-const initList = (listData) => {
-  return (
-    listData.map(e => (
-      <div key={e.activityId} className="my-activitie-box floatfix" onClick={goToDetail_2(e.activityId)}>
-        <div className="img">
-          <img src={e.imgUrl} data-bind="attr: {src: imgUrl}" alt=""/>
-          <span className="status"
-                data-bind="text: status), css: $parent.statusColor(status)">{e.status}</span>
-        </div>
-        <div className="details">
-          <h3 className="title" data-bind="text: title">{e.title}</h3>
-          <div className="time-person floatfix">
-            <i className="ui-icon icon-time"></i>
-            <span className="time" data-bind="text: startTime">{e.startTime}</span>
-            <span className="person">
-              <i className="ui-icon icon-my"></i>
-              <i data-bind="text: applyNo, css: {online: applyNo>demandNo}"></i>/<i
-              data-bind="text: demandNo"></i>
-            </span>
-          </div>
-          <span className="address-box floatfix">
-            <i className="ui-icon icon-location"></i>
-            <span className="address" data-bind="text: location">{e.location}</span>
-          </span>
-        </div>
-      </div>
-    ))
-  )
+const styles = {
+  box: {
+    display: 'flex',
+  },
+  boxdiv: {
+    flex: 'auto',
+    maxHeight: '10rem',
+    overflow: 'auto'
+  },
+  boxli: {
+    margin: '1px',
+    background: '#cce8cf',
+  }
+};
+
+class ListData extends Component {
+  render() {
+    const {listData1, changeTitle, style, num} = this.props
+    return <div style={style}>
+      {listData1.map(e => (
+        <li style={styles.boxli} key={num + e.value} onClick={changeTitle.bind(this, num)}>{e.text}</li>))}
+    </div>
+  }
 }
 
-const goToDetail_2 = id => events => {
-  browserHistory.push(config.baseUrl('/activity/detail/' + id));
+const showList = _ => {
+  return [1, 2, 3].map(e => (
+    <ListData {...this.props.activity} changeTitle={this.props.changeTitle} style={this.getLiStyle(e)}
+              num={numList[e]}/>
+  ))
 }
+
 
 class List extends Component {
 
@@ -47,14 +47,26 @@ class List extends Component {
   componentWillUnmount() {
   }
 
+  getLiStyle = n => {
+    return this.props.activity.showTitle >= n
+      ? styles.boxdiv
+      : {visibility: 'hidden', flex: 'auto'}
+  }
+
   render() {
-    const {name , listData} = this.props.activity
+    const {name, listData1} = this.props.activity
+    const numList = [0, 2, 3, 1]
+    const secName0 = 'flex flex--col flex--reverse'
+    const secName = ''
     return (
-    <div id="pullrefresh" className="floatfix ui-scroll-wrapper_">
-      <main>
-        <input type="color"/>
-      </main>
-    </div>
+      <div>
+        <h1>test flex</h1>
+        <main className={secName0}>
+          <section className={secName}>123</section>
+          <section className={secName}>456</section>
+          <section className={secName}>789</section>
+        </main>
+      </div>
     )
   }
 }
