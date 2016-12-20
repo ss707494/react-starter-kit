@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import config from 'config'
-import './active-list.css'
-import 'zepto'
-// import 'fly'
+import './style.scss'
 import {browserHistory} from 'react-router'
+
+import SearchBox from './searchBox'
 
 const initList = (listData) => {
   return (
@@ -49,11 +49,16 @@ class List extends Component {
   }
 
   render() {
-    const {name , listData} = this.props.activity
+    const {name, listData, searchBoxData} = this.props.activity
+      , changeNavName = this.props.changeNavName
     return (
-    <div id="pullrefresh" className="floatfix ui-scroll-wrapper_">
-
-    </div>
+      <div id="pullrefresh" className="floatfix ui-scroll-wrapper_">
+        <header className="top">
+          <span className="" id="back"> {'<'}</span>
+          <section></section>
+        </header>
+        <SearchBox {...{...searchBoxData,changeNavName}} />
+      </div>
     )
   }
 }

@@ -1,0 +1,18 @@
+@mixin top_back {
+}
+
+$imgPath: '/styles';
+@mixin imgBack {
+  background-image: url(./img/top-bg.png);
+}
+
+.top{
+  width: 100%;
+  height: 2.5rem;
+  background-image: url(./img/top-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  z-index: 99;
+}
