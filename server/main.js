@@ -7,6 +7,10 @@ const config = require('../config')
 const app = express()
 const paths = config.utils_paths
 
+process.on('uncaughtException', function (err) {
+  console.log(err);
+});
+
 if (config.env === 'development' && config.proxy_config && config.proxy_config.length > 0) {
   const httpProxy = require('http-proxy')
   config.proxy_config.map(function (e) {
