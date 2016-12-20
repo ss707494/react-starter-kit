@@ -1,13 +1,12 @@
 import {initRoutesAsyn} from 'baseUtil'
 
+const _path = 'activity'
 export default (store) => ({
-
-  path: 'activity',
-
+  path: _path,
   childRoutes: [
     'list',
     'detail/:id'
-  ].map(initRoutesAsyn(store)),
+  ].map(e => initRoutesAsyn(store)(e, _path)),
 })
 
 

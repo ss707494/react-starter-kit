@@ -1,0 +1,18 @@
+
+.search_box {
+  .search_nav {
+    position: relative;
+    display: flex;
+    height: 2.5rem;
+    li {
+      flex: 1;
+      border: 1px solid black;
+    }
+  }
+  .search_select {
+    position: absolute;
+    li {
+      height: 2rem;
+    }
+  }
+}
