@@ -19,7 +19,7 @@ mapDispatchtoProps.initList = listData => ({
   listData
 })
 mapDispatchtoProps.getListData = params => (dispatch, getState) => {
-  fetch(config.baseApi('/activity/getList?currentPageNo=1&pageSize=20&orderType=1'))
+  fetch(config.baseApi('/organization/getList?fwlyIds=&label=0&community=&currentPageNo=1&pageSize=20'))
     .then(data => data.json())
     .then(res => dispatch(mapDispatchtoProps.initList(res.rows || [])))
 }

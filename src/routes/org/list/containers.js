@@ -4,6 +4,7 @@ import './style.scss'
 import {browserHistory} from 'react-router'
 
 import SearchBox from './searchBox'
+import ListItem from './components/listItem'
 
 const initList = (listData) => {
   return (
@@ -39,9 +40,17 @@ const goToDetail_2 = id => events => {
   browserHistory.push(config.baseUrl('/activity/detail/' + id));
 }
 
+async function getData() {
+  const _url = await fetch(config.baseApi('/organization/getList?fwlyIds=&label=0&community=&currentPageNo=1&pageSize=20'));
+  return await _url.json();
+}
+
 class List extends Component {
 
   componentDidMount() {
+    const data = getData();
+    data.then(e => {
+    });
     this.props.getListData();
   }
 
@@ -57,7 +66,8 @@ class List extends Component {
           <span className="" id="back"> {'<'}</span>
           <section></section>
         </header>
-        <SearchBox {...{...searchBoxData,changeNavName}} />
+        <SearchBox {...{...searchBoxData, changeNavName}} />
+        <ListItem listData={listData}/>
       </div>
     )
   }
