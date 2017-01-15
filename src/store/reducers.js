@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+// import {combineReducers } from 'redux-immutablejs'
 import locationReducer from './location'
 
 export const makeRootReducer = (asyncReducers) => {

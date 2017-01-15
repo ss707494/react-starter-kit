@@ -1,0 +1,19 @@
+.box-li {
+  display: flex;
+  justify-content: space-between;
+  span {
+    //flex:auto;
+  }
+  .box-name {
+    flex: auto;
+
+  }
+  .box-nu {
+    display: flex;
+    align-items: center;
+    //flex: auto;
+  }
+  .box-right {
+    font-size: 1.1rem;
+  }
+}

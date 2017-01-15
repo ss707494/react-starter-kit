@@ -5,6 +5,7 @@ class Detail extends Component {
 
   componentDidMount() {
     const {routeParams, initData} = this.props;
+    debugger
     fetch(config.baseApi('/activity/getDetails?activityId='+ routeParams.id))
       .then(data => data.json())
       .then(res => {

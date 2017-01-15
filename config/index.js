@@ -140,11 +140,11 @@ config.alias.config = config.utils_paths.client('base', 'config.js');
 config.alias.baseUtil = config.utils_paths.client('base', 'baseUtil.js');
 config.alias.customReducer = config.utils_paths.client('store', 'reducers.js');
 config.alias.zepto = config.utils_paths.client('lib', 'zepto.full.min.js');
-config.alias.fly = config.utils_paths.client('lib', 'flyui', 'flyui.mobile.js');
+config.alias.fly = config.utils_paths.client('lib', 'flyui', 'flyui.mobile.min.js');
 
 // noParse
 config.noParse = [
-  // /flyui/
+  // /flyui.mobile/
 ]
 
 // ========================================================

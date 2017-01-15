@@ -11,7 +11,7 @@ import Redirect from './PageNotFound/redirect'
 import Activity from './activity';
 import {initRoutesAsyn} from 'baseUtil'
 import pureTodoDemo from './pureTodoDemo'
-import org from './org'
+import CheckDemo from './CheckDemo';
 
 /*  Note: Instead of using JSX, we recommend using react-router
  PlainRoute objects to build route definitions.   */
@@ -24,7 +24,7 @@ export const createRoutes = (store) => ({
     pureTodoDemo(),
     initRoutesAsyn(store)('todoDemo'),
     Activity(store),
-    org(store),
+    CheckDemo(store),
     CounterRoute(store),
     ZenRoute(store),
     ElapseRoute(store),

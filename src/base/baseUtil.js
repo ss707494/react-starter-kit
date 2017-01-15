@@ -5,6 +5,15 @@
 import { connect } from 'react-redux'
 import { injectReducer } from 'customReducer'
 
+export const initContainerArr = store => (containers, actions) => {
+  const {storeName, initialState, mapDispatchtoProps, action_handlers} = actions;
+  const mapStateToProps = (state) => ({
+    [storeName]: state[storeName]
+  });
+  const reducer = initReducer(initialState, action_handlers);
+  injectReducer(store, {key: storeName, reducer});
+  return containers.map(e=>connect(mapStateToProps, mapDispatchtoProps)(e));
+}
 export const initContainer = store => (containers, actions) => {
   const {storeName, initialState, mapDispatchtoProps, action_handlers} = actions;
   const mapStateToProps = (state) => ({
