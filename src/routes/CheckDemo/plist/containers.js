@@ -29,8 +29,7 @@ class List extends Component {
 
   componentWillMount() {
     const {initPList} = this.props
-    getListData(initPList);
-
+    !this.props.check.get('pListData').size && getListData(initPList);
   }
   componentDidMount() {
   }
@@ -38,7 +37,8 @@ class List extends Component {
   render() {
     const props = this.props;
     const {name , pListData} = props.check.toJS()
-    const nums = props.check.get('pListData').map(e => e.set('num',e.get('children').count(e=> e.get('ischecked')))).toJS()
+    const nums = props.check.get('pListData').map(e => e.set('num',e.get('children').count(e=> e.get('ischecked')))
+      .update(e=> e.set('ischecked', e.get('num')===e.get('children').size) )).toJS()
     return (
       <div>
         {

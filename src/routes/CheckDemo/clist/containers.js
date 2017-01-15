@@ -40,11 +40,13 @@ class List extends Component {
   render() {
     const props = this.props;
     const pListData = props.check.get('pListData')
-    // const {name , pListData} = props.check.toJS()
+    const pid = props.params.id;
+    const _find = v => v.get('serviceTypeId')===pid
+    const index = pListData.findIndex(_find);
     return (
       <div>
         {
-          pListData.size && pListData.find(v => v.get('serviceTypeId')===props.params.id).get('children').toJS().map((e,i) => <CLi key={e.serviceTypeId} n={i} check={props.checkBox} {...e}/>)
+          pListData.size && pListData.find(_find).get('children').toJS().map((e,i) => <CLi key={e.serviceTypeId} n={i} check={props.checkBox.bind(this, ['pListData',index,'children',i,'ischecked'])} {...e}/>)
         }
       </div>
     )
