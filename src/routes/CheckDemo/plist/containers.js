@@ -45,7 +45,7 @@ class List extends Component {
         <section>
           <CLi ischecked={isall} check={props.checkAllPBox}/>
         {
-          nums.map((e,i) => <CLi key={i} n={i} goToDetail_2= {goToDetail_2} check={props.checkBox.bind(this, ['pListData',i,'ischecked'])} {...e}/>)
+          nums.map((e,i) => <CLi key={i} n={i} goToDetail_2= {goToDetail_2(e.serviceTypeId)} check={props.checkBox.bind(this, ['pListData',i,'ischecked'])} {...e}/>)
         }
         </section>
       </div>

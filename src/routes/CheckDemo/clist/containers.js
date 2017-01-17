@@ -33,7 +33,8 @@ class List extends Component {
   }
 
   componentWillMount() {
-
+    const {initPList} = this.props
+    !this.props.check.get('pListData').size && getListData(initPList);
   }
   componentDidMount() {
   }
@@ -54,7 +55,7 @@ class List extends Component {
         <section>
           <CLi ischecked={pListData.getIn([index,'isall'])} check={props.checkAllCBox.bind(null, index)} />
         {
-          cListData && cListData.map((e, i) => <CLi key={e.serviceTypeId} n={i} check={props.checkBox.bind(this, ['pListData',index,'children',i,'ischecked'])} {...e}/>)
+          cListData && cListData.map((e, i) => <CLi key={e.serviceTypeId} n={i} goToDetail_2={props.checkBox.bind(this, ['pListData',index,'children',i,'ischecked'])} check={props.checkBox.bind(this, ['pListData',index,'children',i,'ischecked'])} {...e}/>)
         }
         </section>
       </div>
