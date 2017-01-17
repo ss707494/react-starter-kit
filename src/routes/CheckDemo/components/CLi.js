@@ -22,6 +22,8 @@ CLi.propTypes = {
 }
 CLi.defaultProps = {
   goToDetail_2(){return _=>console.log('goTo')},
+  check(){},
+  serviceTypeName: '全部',
 
 }
 

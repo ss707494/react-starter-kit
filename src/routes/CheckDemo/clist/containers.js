@@ -6,7 +6,7 @@ import data from '../api.json'
 import 'fly'
 import CLi from '../components/CLi'
 import { Link, withRouter } from 'react-router'
-
+import Head from '../components/Head'
 
 fly.config.router.disabled = false;
 const goToDetail_2 = id => events => {
@@ -20,6 +20,10 @@ const getListData = async initPList => {
   await sleep(500);
   const res = await dat;
   initPList(res.data)
+}
+
+function checkAll() {
+
 }
 
 class List extends Component {
@@ -43,11 +47,16 @@ class List extends Component {
     const pid = props.params.id;
     const _find = v => v.get('serviceTypeId')===pid
     const index = pListData.findIndex(_find);
+    const cListData = pListData.getIn([index,'children']).toJS();
     return (
       <div>
+        <Head />
+        <section>
+          <CLi ischecked={pListData.getIn([index,'isall'])} check={props.checkAllCBox.bind(null, index)} />
         {
-          pListData.size && pListData.find(_find).get('children').toJS().map((e,i) => <CLi key={e.serviceTypeId} n={i} check={props.checkBox.bind(this, ['pListData',index,'children',i,'ischecked'])} {...e}/>)
+          cListData && cListData.map((e, i) => <CLi key={e.serviceTypeId} n={i} check={props.checkBox.bind(this, ['pListData',index,'children',i,'ischecked'])} {...e}/>)
         }
+        </section>
       </div>
     )
   }

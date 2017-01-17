@@ -16,6 +16,7 @@ export default (store) => ({
   path: _path,
   getChildRoutes(location, callback) {
     require.ensure([], function (require) {
+      window.sto = store;
       const actions = require('./actions')
       const child = ['plist', 'clist'].map(e => {
         return require('./' + e + '/containers').container

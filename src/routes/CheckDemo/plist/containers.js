@@ -5,6 +5,7 @@ import {browserHistory} from 'react-router'
 import data from '../api.json'
 import 'fly'
 import CLi from '../components/CLi'
+import Head from '../components/Head'
 import { Link, withRouter } from 'react-router'
 
 fly.config.router.disabled = false;
@@ -36,14 +37,17 @@ class List extends Component {
 
   render() {
     const props = this.props;
-    const {name , pListData} = props.check.toJS()
-    const nums = props.check.get('pListData').map(e => e.set('num',e.get('children').count(e=> e.get('ischecked')))
-      .update(e=> e.set('ischecked', e.get('num')===e.get('children').size) )).toJS()
+    const {name , pListData, isall} = props.check.toJS()
+    const nums = props.check.get('pListData').toJS();
     return (
       <div>
+        <Head />
+        <section>
+          <CLi ischecked={isall} check={props.checkAllPBox}/>
         {
           nums.map((e,i) => <CLi key={i} n={i} goToDetail_2= {goToDetail_2} check={props.checkBox.bind(this, ['pListData',i,'ischecked'])} {...e}/>)
         }
+        </section>
       </div>
     )
   }
